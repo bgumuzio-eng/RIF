@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>The Infratech Triangle — Resilient Infratech Fund</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+/* ── Remove grid bg ── */
+body { background-image: none !important; }
+
+/* ── Transparent nav override (defeats mobile backdrop rule) ── */
+header.site-nav.transparent {
+  background: transparent !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ═══════════════════════════════════════════════════
+   CONTEXT BAND
+═══════════════════════════════════════════════════ */
+.context-band {
+  background: rgba(0,191,255,0.06);
+  border-top: 1px solid rgba(0,191,255,0.18);
+  border-bottom: 1px solid rgba(0,191,255,0.18);
+  padding: 40px var(--space);
+}
+.context-band .inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+.ctx-item { padding: 14px 24px; border-right: 1px solid rgba(255,255,255,0.08); }
+.ctx-item:last-child { border-right: none; }
+.ctx-num  { display: block; font-size: clamp(2rem,4vw,3rem); font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 8px; }
+.ctx-label { font-size: 0.85rem; color: rgba(255,255,255,0.58); line-height: 1.6; }
+
+/* ═══════════════════════════════════════════════════
+   SCROLL-ANIMATED SECTION
+═══════════════════════════════════════════════════ */
+
+/* Outer wrapper — defines scroll canvas height */
+.tri-outer {
+  position: relative;
+  height: 500vh;
+}
+
+/* Sticky container — fills one viewport */
+.tri-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background: var(--bg);
+}
+
+/* ── Title area — pinned at top, always visible ── */
+.tri-title-area {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 3;
+  text-align: center;
+  padding: calc(var(--nav-h) + 28px) var(--space) 16px;
+  background: transparent;
+}
+.tri-title-area .section-h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 900;
+  margin: 10px 0 12px;
+}
+.tri-title-area .section-h2 em { font-style: normal; color: var(--primary); }
+.tri-title-area p {
+  font-size: clamp(0.92rem, 1.4vw, 1rem);
+  color: rgba(255,255,255,0.62);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Scroll cue ── */
+.tri-scroll-cue {
+  position: absolute;
+  bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  display: flex; align-items: center; gap: 8px;
+  z-index: 5; transition: opacity .4s ease;
+}
+.tri-scroll-cue::after {
+  content: ''; display: block; width: 1px; height: 28px;
+  background: linear-gradient(to bottom, rgba(0,191,255,0.5), transparent);
+  animation: scrollPulse 1.6s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+
+/* ═══════════════════════════════════════════════════
+   LUX INNER — 3-pillar section (flex child, always visible)
+═══════════════════════════════════════════════════ */
+.lux-inner {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  overflow: hidden;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* ── Left labels ── */
+.lux-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 48px 0 clamp(24px, 5vw, 80px);
+  gap: 2px;
+}
+.lux-overline {
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--primary); margin-bottom: 32px; display: block;
+}
+.lux-label {
+  font-family: 'Barlow Condensed', 'Poppins', sans-serif;
+  font-size: clamp(22px, 3.4vw, 48px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.13);
+  cursor: default; line-height: 1.1;
+  padding: 14px 0 14px 22px;
+  border-left: 2px solid transparent;
+  transition: color 0.5s ease, border-color 0.5s ease, padding-left 0.35s ease;
+}
+.lux-label.active {
+  color: #fff;
+  border-left-color: var(--primary);
+  padding-left: 30px;
+}
+.lux-label-sub {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(9px, 0.9vw, 11px); font-weight: 400; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(0,191,255,0.55); margin-top: 5px;
+  max-height: 0; overflow: hidden; opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease 0.05s;
+}
+.lux-label.active .lux-label-sub { max-height: 30px; opacity: 1; }
+
+/* ── Right panels ── */
+.lux-right { position: relative; overflow: hidden; }
+.lux-panel {
+  position: absolute;
+  inset: 0; opacity: 0; pointer-events: none;
+  transition: opacity 0.65s ease;
+  display: flex; flex-direction: column;
+}
+.lux-panel.active { opacity: 1; pointer-events: auto; }
+.lux-panel-img { flex: 1; overflow: hidden; position: relative; }
+.lux-panel-img img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 40%;
+  filter: brightness(0.65) saturate(0.8);
+  transform: scale(1.06); transition: transform 1.4s ease;
+}
+.lux-panel.active .lux-panel-img img { transform: scale(1.0); }
+.lux-panel-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(4,12,30,0.65) 0%, rgba(4,12,30,0.15) 50%, rgba(4,12,30,0) 100%);
+  pointer-events: none;
+}
+.lux-panel-text {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: clamp(24px,4vh,48px) clamp(24px,4vw,52px);
+  background: linear-gradient(0deg, rgba(4,12,30,0.98) 0%, rgba(4,12,30,0.88) 40%, rgba(4,12,30,0.0) 100%);
+}
+.lux-panel-tag {
+  display: inline-block; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--primary); margin-bottom: 10px;
+}
+.lux-panel-text h3 {
+  font-size: clamp(1rem, 1.8vw, 1.32rem); font-weight: 800; color: #fff;
+  margin: 0 0 12px; line-height: 1.3; max-width: 42ch;
+}
+.lux-panel-text p {
+  font-size: clamp(0.82rem, 1.1vw, 0.93rem); color: rgba(255,255,255,0.62);
+  line-height: 1.8; margin: 0 0 18px; max-width: 52ch; text-align: justify;
+}
+.lux-panel-bullets {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none;
+}
+.lux-panel-bullets li {
+  font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.6);
+  background: rgba(0,191,255,0.08); border: 1px solid rgba(0,191,255,0.2);
+  border-radius: 20px; padding: 4px 12px; white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════
+   TRIANGLE OVERLAY LAYER
+═══════════════════════════════════════════════════ */
+.tri-layer { position: absolute; inset: 0; pointer-events: none; z-index: 3; opacity: 0; }
+.tri-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.tri-edge-path {
+  fill: none; stroke: url(#triGrad); stroke-width: 2; stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(0,191,255,0.5));
+}
+.tri-inner-dashed { display: none; }
+
+/* Flying vertex icons */
+.fly-icon {
+  position: absolute; width: 64px; height: 64px;
+  background: #09101f; border: 2px solid rgba(0,191,255,0.55); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  filter: drop-shadow(0 0 14px rgba(0,191,255,0.35)); opacity: 0; transition: none;
+}
+.fly-icon svg { width: 30px; height: 30px; color: #ffffff; }
+
+/* Convergence center label */
+.tri-center-label {
+  position: absolute;
+  font-family: 'Barlow Condensed', 'Poppins', sans-serif;
+  font-size: clamp(10px, 1.3vw, 14px); font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: rgba(0,191,255,0.75); text-align: center;
+  opacity: 0; transform: translate(-50%, -50%); line-height: 2; pointer-events: none;
+}
+
+/* Tech nodes inside the triangle */
+.tri-tech-nodes { position: absolute; inset: 0; pointer-events: none; }
+.tech-tag {
+  position: absolute; background: rgba(0,191,255,0.1); border: 1px solid rgba(0,191,255,0.25);
+  border-radius: 20px; padding: 5px 14px; font-size: 0.76rem; font-weight: 700;
+  color: rgba(255,255,255,0.85); white-space: nowrap; transform: translate(-50%, -50%); opacity: 0;
+}
+
+/* ── Flying labels overlay (z-index above tri-layer, independent opacity) ── */
+.fly-labels-overlay {
+  position: absolute; inset: 0; pointer-events: none; z-index: 4; overflow: visible;
+}
+.fly-label {
+  position: absolute;
+  font-family: 'Barlow Condensed', 'Poppins', sans-serif;
+  font-size: clamp(22px, 3.4vw, 48px); font-weight: 800; letter-spacing: 0.13em;
+  text-transform: uppercase; color: #fff; opacity: 0;
+  text-shadow: 0 0 20px rgba(0,191,255,0.45); line-height: 1.2;
+  text-align: center; transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   REST OF PAGE SECTIONS
+═══════════════════════════════════════════════════ */
+.section-h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 900; line-height: 1.12; margin: 0 0 16px;
+}
+.section-h2 em { font-style: normal; color: var(--primary); }
+.section-lead {
+  font-size: clamp(0.98rem, 1.5vw, 1.08rem);
+  color: rgba(255,255,255,0.65); line-height: 1.8; max-width: 70ch; margin: 0 0 52px;
+}
+
+/* Capital Gap */
+.gap-box { background: rgba(0,0,0,0.22); border-radius: 20px; padding: 56px 48px; margin-bottom: 80px; }
+.gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+.gap-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 28px 24px; }
+.gap-card.blocked { border-color: rgba(255,80,80,0.3); }
+.gap-card h4 { font-size: 0.92rem; font-weight: 800; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.07em; }
+.gap-card.blocked h4 { color: rgba(255,100,100,0.9); }
+.gap-card p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.72; margin: 0; }
+.valley-line { margin-top: 32px; text-align: center; font-size: clamp(1rem,2vw,1.25rem); font-weight: 800; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; }
+.valley-line span { color: var(--primary); }
+
+/* F4E */
+.f4e-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-bottom: 80px; }
+.f4e-steps { display: flex; flex-direction: column; gap: 16px; }
+.f4e-step { display: flex; gap: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px 22px; }
+.step-num { width: 36px; height: 36px; flex-shrink: 0; background: var(--primary); color: var(--ink); font-weight: 900; font-size: 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.f4e-step h5 { font-size: 0.95rem; font-weight: 700; margin: 0 0 4px; }
+.f4e-step p { font-size: 0.87rem; color: rgba(255,255,255,0.58); margin: 0; line-height: 1.62; }
+
+/* Audience cards */
+.audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 80px; }
+.aud-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 40px 34px; transition: border-color .3s, transform .3s; }
+.aud-card:hover { border-color: var(--primary); transform: translateY(-4px); }
+.aud-card .tag { display: inline-block; background: rgba(0,191,255,0.1); border: 1px solid rgba(0,191,255,0.3); border-radius: 6px; padding: 4px 12px; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); margin-bottom: 18px; }
+.aud-card h3 { font-size: 1.25rem; font-weight: 800; margin: 0 0 14px; }
+.aud-card p { font-size: 0.92rem; color: rgba(255,255,255,0.62); line-height: 1.75; margin: 0 0 24px; }
+.aud-card ul { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 9px; }
+.aud-card ul li { font-size: 0.87rem; color: rgba(255,255,255,0.7); padding-left: 20px; position: relative; line-height: 1.5; }
+.aud-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+.fund-table { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px 20px; margin-bottom: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 7px 20px; font-size: 0.82rem; }
+.fund-table .lbl { color: rgba(255,255,255,0.42); }
+.fund-table .val { font-weight: 700; }
+.btn-aud { display: inline-block; background: var(--primary); color: var(--ink); font-weight: 800; font-size: 0.95rem; padding: 13px 28px; border-radius: 8px; border: none; cursor: pointer; font-family: inherit; transition: transform .2s, box-shadow .2s; }
+.btn-aud:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,191,255,0.35); }
+
+@media (max-width: 900px) {
+  .gap-grid { grid-template-columns: 1fr; }
+  .f4e-wrap { grid-template-columns: 1fr; }
+  .audience-grid { grid-template-columns: 1fr; }
+  .gap-box { padding: 36px 22px; }
+}
+
+/* Modal */
+.modal-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.75); align-items: center; justify-content: center; padding: 20px; }
+.modal-overlay.active { display: flex; }
+.modal-box { background: #0c1a36; border: 1px solid rgba(0,191,255,0.25); border-radius: 20px; padding: 48px; width: 100%; max-width: 560px; position: relative; color: #fff; max-height: 90vh; overflow-y: auto; }
+.modal-close { position: absolute; top: 16px; right: 20px; background: transparent; border: none; color: rgba(255,255,255,0.6); font-size: 1.6rem; cursor: pointer; line-height: 1; }
+.modal-close:hover { color: #fff; }
+.modal-box h3 { font-size: 1.4rem; font-weight: 800; margin: 0 0 8px; }
+.modal-sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin: 0 0 28px; }
+.modal-form { display: flex; flex-direction: column; gap: 14px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-input { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 12px 16px; color: #fff; font-family: inherit; font-size: 0.92rem; width: 100%; }
+.form-input:focus { outline: none; border-color: var(--primary); }
+.form-submit { background: var(--primary); color: var(--ink); font-weight: 800; font-size: 1rem; padding: 14px; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+
+/* ── Hero full-height override ── */
+.intro .media { height: 100vh; }
+
+/* ═══════════════════════════════════════════════════
+   MOBILE FALLBACK
+═══════════════════════════════════════════════════ */
+@media (max-width: 820px) {
+  .tri-outer { height: auto; }
+  .tri-sticky {
+    position: relative; height: auto; overflow: visible;
+    padding: 60px var(--space) 40px;
+    flex-direction: column; justify-content: flex-start;
+  }
+  .tri-title-area { padding: 40px var(--space) 20px; margin-bottom: 0; }
+  .lux-inner {
+    position: relative; opacity: 1 !important; pointer-events: auto !important;
+    display: block; inset: auto;
+  }
+  .lux-left { display: none; }
+  .lux-right { position: relative; display: flex; flex-direction: column; gap: 2px; }
+  .lux-panel { position: relative; opacity: 1 !important; pointer-events: auto; height: 70vw; min-height: 260px; display: flex; flex-direction: column; }
+  .lux-panel + .lux-panel { margin-top: 2px; }
+  .lux-panel-img { flex: 1; }
+  .tri-layer { display: none; }
+  .fly-labels-overlay { display: none; }
+  .tri-scroll-cue { display: none; }
+  .context-band .inner { grid-template-columns: 1fr; }
+  .ctx-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .ctx-item:last-child { border-bottom: none; }
+}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-nav transparent">
+  <div class="container">
+    <div class="bar">
+      <a class="brand" href="index.html"><img src="img/logo-negro.png" alt="RIF logo"></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+      </button>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="infratech-triangle.html" style="color:var(--primary);">The Infratech Triangle</a>
+        <a href="strat.html">Strategy</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="team.html">Team</a>
+        <a class="cta" href="contact.html">Reach Out</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="intro">
+  <div class="media">
+    <img src="Fondo Triángulo.jpg" alt="The Infratech Triangle" style="object-position:50% 55%;">
+  </div>
+  <div class="hero-copy reveal" data-reveal>
+    <div class="bar"></div>
+    <div class="lines">
+      <span class="line1">Our Investment Framework</span>
+      <span class="line2">The Infratech Triangle</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEXT NUMBERS -->
+<div class="context-band">
+  <div class="inner">
+    <div class="ctx-item">
+      <span class="ctx-num">$50T+</span>
+      <span class="ctx-label">Investment required across Energy,<br>Industrial &amp; Digital infrastructure through 2040<br><em style="font-size:0.76rem;opacity:0.55;">Source: McKinsey</em></span>
+    </div>
+    <div class="ctx-item">
+      <span class="ctx-num">3</span>
+      <span class="ctx-label">Converging forces driving the transformation:<br>AI · Energy Transition · Industrial Modernisation</span>
+    </div>
+    <div class="ctx-item">
+      <span class="ctx-num">TRL 6–9</span>
+      <span class="ctx-label">The readiness level of most Infratech solutions —<br>proven, deployable, but chronically undercapitalised</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  SCROLL-ANIMATED SECTION:
+  Three Forces title → 3 Pillars (Lux) → Triangle
+═══════════════════════════════════════════ -->
+<div class="tri-outer" id="triOuter">
+  <div class="tri-sticky" id="triSticky">
+
+    <!-- Layer 1: Title intro (flex child, fades out as scroll begins) -->
+    <div class="tri-title-area" id="triTitleArea">
+      <span class="eyebrow">The Three Forces</span>
+      <h2 class="section-h2">Not three sectors. <em>One convergence.</em></h2>
+      <p>Energy, industrial and digital infrastructure are no longer parallel trends — they feed and accelerate each other. The energy transition needs AI to optimise grids. Decarbonised industry runs on electrification and digital control. AI cannot scale without massive clean power infrastructure. <strong style="color:#fff;">These three forces have merged into a single investment megatrend.</strong></p>
+    </div>
+
+    <!-- Layer 2: Lux 3-pillar section (absolute overlay, JS-driven opacity) -->
+    <div class="lux-inner" id="luxInner">
+
+      <!-- Left: label list -->
+      <div class="lux-left">
+        <span class="lux-overline">Investment Focus</span>
+
+        <div class="lux-label active" id="luxLabel0">
+          Energy<br>Infrastructure
+          <span class="lux-label-sub">Clean, flexible power</span>
+        </div>
+        <div class="lux-label" id="luxLabel1">
+          Industrial<br>Infrastructure
+          <span class="lux-label-sub">Electrified production</span>
+        </div>
+        <div class="lux-label" id="luxLabel2">
+          Digital<br>Infrastructure
+          <span class="lux-label-sub">AI-ready systems</span>
+        </div>
+      </div>
+
+      <!-- Right: content panels -->
+      <div class="lux-right">
+
+        <!-- Panel 0: Energy -->
+        <div class="lux-panel active" id="luxPanel0">
+          <div class="lux-panel-img">
+            <img src="Energy Infrastructure.jpg" alt="Energy Infrastructure">
+          </div>
+          <div class="lux-panel-text">
+            <span class="lux-panel-tag">01 — Energy Infrastructure</span>
+            <h3>Clean, flexible power as the backbone of AI, industry and mobility</h3>
+            <p>The energy transition demands more than renewables. It requires a complete rebuild of the physical grid — long-duration storage, advanced power electronics, and grid-edge flexibility hardware that turns factories and data centres into active grid participants. RIF backs the companies building this new physical energy backbone.</p>
+            <ul class="lux-panel-bullets">
+              <li>Long-Duration Energy Storage</li>
+              <li>Grid-forming power electronics</li>
+              <li>Industrial microgrids</li>
+              <li>Advanced transformers</li>
+              <li>Flexibility hardware</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Panel 1: Industrial -->
+        <div class="lux-panel" id="luxPanel1">
+          <div class="lux-panel-img">
+            <img src="Industry Infrastructure.jpg" alt="Industrial Infrastructure">
+          </div>
+          <div class="lux-panel-text">
+            <span class="lux-panel-tag">02 — Industrial Infrastructure</span>
+            <h3>Electrified, automated production connected to energy and data</h3>
+            <p>Europe's industrial base must be decarbonised, digitally connected, and made more resilient. Process heat electrification, industrial robotics, smart water systems, and flexible microgrids are not optional upgrades — they are structural requirements in a competitive, carbon-constrained economy. RIF invests in technologies turning factories into intelligent, low-carbon assets.</p>
+            <ul class="lux-panel-bullets">
+              <li>Industrial heat electrification</li>
+              <li>Robotics &amp; digital twins</li>
+              <li>Industrial water systems</li>
+              <li>Circular-resource platforms</li>
+              <li>Smart microgrids</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Panel 2: Digital -->
+        <div class="lux-panel" id="luxPanel2">
+          <div class="lux-panel-img">
+            <img src="Digital Infrastructure.jpg" alt="Digital Infrastructure">
+          </div>
+          <div class="lux-panel-text">
+            <span class="lux-panel-tag">03 — Digital Infrastructure</span>
+            <h3>AI-ready data centres, connectivity and secure digital backbones</h3>
+            <p>AI cannot scale without physical infrastructure. Data centres are becoming industrial-scale energy consumers. Edge computing pushes intelligence to the network periphery. Digital twins enable real-time optimisation of energy and industrial systems. RIF backs the hardware and platform companies making AI infrastructure resilient, efficient, and deployable at scale across Europe.</p>
+            <ul class="lux-panel-bullets">
+              <li>Data-centre thermal &amp; power infra</li>
+              <li>Edge &amp; micro data centres</li>
+              <li>Advanced cooling systems</li>
+              <li>Digital-twin platforms</li>
+              <li>Secure connectivity</li>
+            </ul>
+          </div>
+        </div>
+
+      </div><!-- /lux-right -->
+    </div><!-- /lux-inner -->
+
+    <!-- Layer 3: Triangle animation overlay (SVG + icons) -->
+    <div class="tri-layer" id="triLayer">
+
+      <svg class="tri-svg" id="triSvg">
+        <defs>
+          <linearGradient id="triGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#00bfff" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#007acc" stop-opacity="0.55"/>
+          </linearGradient>
+        </defs>
+        <path class="tri-edge-path" id="triEdgePath" d=""/>
+        <polygon class="tri-inner-dashed" id="triInnerPoly" points=""/>
+      </svg>
+
+      <!-- Vertex icons (appear at triangle vertices) -->
+      <div class="fly-icon" id="flyIcon0"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 3 9 17h9L9 29l14-14h-9z"/></svg></div>
+      <div class="fly-icon" id="flyIcon1"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,28 2,14 9,19 9,14 16,19 16,12 28,12 28,28"/><line x1="1" y1="28" x2="31" y2="28"/><rect x="21" y="4" width="3.5" height="9" rx="0.5"/><rect x="3" y="21" width="3.5" height="4" rx="0.3"/><rect x="9.5" y="21" width="3.5" height="4" rx="0.3"/><rect x="19" y="18" width="3" height="4" rx="0.3"/><rect x="24" y="18" width="3" height="4" rx="0.3"/></svg></div>
+      <div class="fly-icon" id="flyIcon2"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="16" cy="5" r="2.5"/><circle cx="5" cy="25" r="2.5"/><circle cx="27" cy="25" r="2.5"/><circle cx="16" cy="16" r="3.5"/><line x1="16" y1="12.5" x2="16" y2="7.5"/><line x1="12.9" y1="18.5" x2="7.5" y2="23"/><line x1="19.1" y1="18.5" x2="24.5" y2="23"/><line x1="7" y1="23" x2="13.5" y2="7.5" stroke-dasharray="2.5 2"/><line x1="25" y1="23" x2="18.5" y2="7.5" stroke-dasharray="2.5 2"/><line x1="7.5" y1="25" x2="24.5" y2="25" stroke-dasharray="2.5 2"/></svg></div>
+
+      <!-- Convergence center label -->
+      <div class="tri-center-label" id="triCenterLabel">The<br>Convergence<br>Zone</div>
+
+      <!-- Tech tags inside triangle -->
+      <div class="tri-tech-nodes" id="triTechNodes">
+        <span class="tech-tag" id="tt0">Smart Grids</span>
+        <span class="tech-tag" id="tt1">Energy Storage</span>
+        <span class="tech-tag" id="tt2">Data Centres</span>
+        <span class="tech-tag" id="tt3">Industrial Heat</span>
+        <span class="tech-tag" id="tt4">Robotics / IoT</span>
+        <span class="tech-tag" id="tt5">Edge Compute</span>
+      </div>
+
+    </div><!-- /tri-layer -->
+
+    <!-- Layer 4: Flying title labels (independent opacity, above tri-layer) -->
+    <div class="fly-labels-overlay" id="flyLabelsOverlay">
+      <div class="fly-label" id="flyLabel0">Energy<br>Infrastructure</div>
+      <div class="fly-label" id="flyLabel1">Industrial<br>Infrastructure</div>
+      <div class="fly-label" id="flyLabel2">Digital<br>Infrastructure</div>
+    </div>
+
+  </div><!-- /tri-sticky -->
+</div><!-- /tri-outer -->
+
+
+<!-- CAPITAL GAP -->
+<section class="section">
+  <div class="container">
+    <div class="gap-box reveal" data-reveal>
+      <span class="eyebrow" style="display:block;margin-bottom:12px;">The Capital Gap</span>
+      <h2 class="section-h2">Traditional capital <em>cannot</em> fund the transition</h2>
+      <p class="section-lead" style="margin-bottom:0;">Infratech companies sit in a structural no-man's land. Hardtech doesn't fit classic VC timelines. Infrastructure capital arrives far too late. Between them lies the <strong style="color:#fff;">double valley of death</strong> — where early deployment is chronically undercapitalised.</p>
+      <div class="gap-grid">
+        <div class="gap-card blocked">
+          <h4>❌ Venture Capital Stops Here</h4>
+          <p>Hardware-intensive, asset-heavy infrastructure plays don't work with traditional venture timelines. VC systematically underfunds hard-tech, creating a gap between prototyping and early commercialisation.</p>
+        </div>
+        <div class="gap-card blocked">
+          <h4>❌ Infrastructure Funds Arrive Too Late</h4>
+          <p>Infrastructure and project finance require proven, fully de-risked technologies with multi-year track records. These investors enter only once all technology risk has been eliminated — often a decade after initial demonstrations.</p>
+        </div>
+      </div>
+      <div class="valley-line">
+        This gap is where <span>InfraTech champions are built.</span><br>
+        <span style="font-size:0.88rem;font-weight:600;color:rgba(255,255,255,0.5);">And this is where RIF invests.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- F4E -->
+<section class="section">
+  <div class="container">
+    <div class="f4e-wrap">
+      <div class="reveal" data-reveal>
+        <span class="eyebrow" style="display:block;margin-bottom:12px;">RIF's Solution</span>
+        <h2 class="section-h2">Financing for <em>Equity</em> (F4E)</h2>
+        <p style="font-size:clamp(0.98rem,1.5vw,1.08rem);color:rgba(255,255,255,0.65);line-height:1.8;margin:0 0 20px;">Built on 20+ years of InfraTech experience, F4E blends equity investment with structured, asset-based capital aligned with deployment milestones — so companies scale with far less reliance on repeated equity rounds.</p>
+        <p style="font-size:clamp(0.98rem,1.5vw,1.08rem);color:rgba(255,255,255,0.65);line-height:1.8;margin:0;">The result: a Pareto-optimal allocation of capital that turns a fragmented hard-tech landscape into a structured, investable asset class. <strong style="color:#fff;">Prototype → Deployment → Platform → Infrastructure scale.</strong></p>
+      </div>
+      <div class="f4e-steps">
+        <div class="f4e-step reveal" data-reveal>
+          <div class="step-num">1</div>
+          <div><h5>Survive the Valley of Death</h5><p>Bridge the funding gap without corporate debt or excessive equity dilution at unfavourable valuations.</p></div>
+        </div>
+        <div class="f4e-step reveal" data-reveal>
+          <div class="step-num">2</div>
+          <div><h5>Scale Efficiently</h5><p>Deploy first-of-a-kind (FOAK) units using asset-based vehicles, generating early revenue without diluting the cap table.</p></div>
+        </div>
+        <div class="f4e-step reveal" data-reveal>
+          <div class="step-num">3</div>
+          <div><h5>Accelerate Commercial Traction</h5><p>Move faster from prototype to deployed asset — building industrial partnerships and the track record that matters.</p></div>
+        </div>
+        <div class="f4e-step reveal" data-reveal>
+          <div class="step-num">4</div>
+          <div><h5>Reach Bankability</h5><p>Create a clear pathway to infrastructure financing readiness, unlocking institutional capital at the right moment.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR LPs AND FOUNDERS -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow" style="display:block;text-align:center;margin-bottom:12px;">Who We Work With</span>
+    <h2 class="section-h2" style="text-align:center;max-width:18ch;margin:0 auto 12px;">Built for <em>LPs</em> and <em>Founders</em></h2>
+    <p class="section-lead" style="text-align:center;margin-left:auto;margin-right:auto;">RIF opens a differentiated investment universe for institutional investors, while providing InfraTech founders with the structured capital they need to scale without the constraints of traditional VC.</p>
+
+    <div class="audience-grid">
+      <div class="aud-card reveal" data-reveal>
+        <div class="tag">For Investors</div>
+        <h3>A Blue Ocean for Institutional LPs</h3>
+        <p>While VC capital concentrates in AI hype cycles at historically untenable valuations, the Infratech Triangle remains underpriced, underserved and grounded in engineering fundamentals.</p>
+        <ul>
+          <li>Technology value rooted in physics, not ARR metrics</li>
+          <li>Defensible IP, industrial traction and deployment pipelines</li>
+          <li>Early revenue from asset deployment from Year 4</li>
+          <li>Aligned with EU taxonomy and regulatory momentum</li>
+          <li>Backed by a €680m AUM institutional platform (GVC Group)</li>
+        </ul>
+        <div class="fund-table">
+          <span class="lbl">Fund size</span><span class="val">€50m – €100m target</span>
+          <span class="lbl">Lifetime</span><span class="val">8 + 2 years</span>
+          <span class="lbl">Hurdle rate</span><span class="val">8%</span>
+          <span class="lbl">Carry</span><span class="val">20%</span>
+          <span class="lbl">GP commitment</span><span class="val">3%</span>
+          <span class="lbl">Geography</span><span class="val">Europe + MENA</span>
+        </div>
+        <button class="btn-aud" id="openModalLP">Request Fund Information</button>
+      </div>
+
+      <div class="aud-card reveal" data-reveal>
+        <div class="tag">For Founders</div>
+        <h3>Capital Designed for Hard-Tech Builders</h3>
+        <p>If you are building at the intersection of Energy, Industrial or Digital infrastructure, you know the problem: traditional VC won't fund physical deployment. RIF was built for exactly this gap.</p>
+        <ul>
+          <li>Equity combined with structured, asset-based deployment capital</li>
+          <li>Preserve your cap table — scale without repeated dilutive rounds</li>
+          <li>500+ opportunities mapped / year, 15–30 qualified per month</li>
+          <li>Engineering-literate team — we evaluate TRL 6–9 with precision</li>
+          <li>Access to EU regulatory pathways and early adoption networks</li>
+        </ul>
+        <div class="fund-table">
+          <span class="lbl">Stage</span><span class="val">Series A</span>
+          <span class="lbl">First ticket</span><span class="val">€3 – 5M</span>
+          <span class="lbl">Geography</span><span class="val">Europe</span>
+          <span class="lbl">Focus</span><span class="val">Climate Infra &amp; Industrial Tech</span>
+          <span class="lbl">TRL</span><span class="val">6 – 9</span>
+          <span class="lbl">Model</span><span class="val">F4E (equity + structured capital)</span>
+        </div>
+        <button class="btn-aud" id="openModalFounder">Apply for Investment</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="section" style="border-top:1px solid rgba(255,255,255,0.07);text-align:center;">
+  <div class="container">
+    <span class="eyebrow" style="display:block;margin-bottom:12px;">The Opportunity is Now</span>
+    <h2 class="section-h2" style="max-width:18ch;margin:0 auto 18px;">Europe's next <em>infrastructure champions</em> will be built here.</h2>
+    <p style="font-size:clamp(0.98rem,1.5vw,1.08rem);color:rgba(255,255,255,0.62);max-width:52ch;margin:0 auto 36px;line-height:1.8;">The window for strategic positioning is limited. The investors and founders who act now will shape — and benefit from — the next decades of European competitiveness.</p>
+    <a class="btn-aud" href="contact.html">Get in Touch with RIF</a>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="itModal" role="dialog" aria-modal="true" aria-labelledby="itModalTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="closeItModal" aria-label="Close">&times;</button>
+    <h3 id="itModalTitle">Get in Touch</h3>
+    <p class="modal-sub">Fill in your details and we'll get back to you shortly.</p>
+    <form class="modal-form" action="https://formspree.io/f/xvgqvrwq" method="POST">
+      <input type="hidden" name="_subject" id="itModalSubject" value="Enquiry — Infratech Triangle">
+      <input type="hidden" name="_to" value="bg@rif.ventures">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="form-row">
+        <input class="form-input" type="text" name="name" placeholder="Full Name *" required>
+        <input class="form-input" type="email" name="_replyto" placeholder="Email Address *" required>
+      </div>
+      <div class="form-row">
+        <input class="form-input" type="text" name="company" placeholder="Company Name *" required>
+        <input class="form-input" type="text" name="location" placeholder="City / Country *" required>
+      </div>
+      <textarea class="form-input" name="message" rows="4" placeholder="Your message or question…"></textarea>
+      <button class="form-submit" type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<div style="font-size:0.85rem;font-style:italic;text-align:center;color:#cfd6df;margin:20px auto 10px;max-width:1000px;line-height:1.5;padding:0 16px;">
+  This is not an offer to sell or solicitation to buy securities. For professional investors only. Investments in FCREs are illiquid and involve risk, including loss of capital.
+</div>
+
+<footer class="site-footer">
+  <div class="footer-wrapper">
+    <div class="footer-brand"><p class="footer-company">Resilient InfraTech Ventures FCRE, S.A</p></div>
+    <div class="footer-legal">
+      <p><strong>Legal</strong></p>
+      <ul>
+        <li><a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a></li>
+        <li><a href="terms.html" target="_blank" rel="noopener">Terms of Service</a></li>
+        <li><a href="cookie.html" target="_blank" rel="noopener">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Resilient InfraTech Ventures FCRE, S.A. All rights reserved.</p></div>
+</footer>
+
+<script>
+(function(){
+
+/* ─────────────────────────────────────────────
+   NAV: mobile toggle + transparent scroll
+───────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const header    = document.querySelector('.site-nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks  = document.querySelector('.site-nav .links');
+  if (!header || !navToggle || !navLinks) return;
+
+  let overlay = document.querySelector('.mobile-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'mobile-overlay';
+    document.body.appendChild(overlay);
+  }
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:2040;opacity:0;pointer-events:none;transition:opacity .28s;background:rgba(0,0,0,0);';
+
+  const isMob = () => window.innerWidth <= 820;
+  function showOv(){ overlay.style.background='rgba(0,0,0,0.45)';overlay.style.opacity='1';overlay.style.pointerEvents='auto'; }
+  function hideOv(){ overlay.style.background='rgba(0,0,0,0)';overlay.style.opacity='0';overlay.style.pointerEvents='none'; }
+
+  navToggle.addEventListener('click', () => {
+    if (!isMob()) return;
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+    navLinks.style.zIndex = open ? '2060' : '';
+    if (open){ document.documentElement.style.overflow='hidden'; showOv(); }
+    else { document.documentElement.style.removeProperty('overflow'); hideOv(); }
+  });
+  overlay.addEventListener('click', () => { navLinks.classList.remove('open'); document.documentElement.style.removeProperty('overflow'); hideOv(); });
+  document.addEventListener('keydown', e => { if(e.key==='Escape' && navLinks.classList.contains('open')){ navLinks.classList.remove('open'); document.documentElement.style.removeProperty('overflow'); hideOv(); }});
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); hideOv(); document.documentElement.style.removeProperty('overflow'); }));
+  window.addEventListener('resize', () => { if(!isMob()){ navLinks.classList.remove('open'); hideOv(); }});
+
+  /* Transparent → opaque on scroll */
+  const onNavScroll = () => {
+    const isScrolled = window.scrollY > 10;
+    header.classList.toggle('scrolled', isScrolled);
+    header.classList.toggle('transparent', !isScrolled);
+  };
+  window.addEventListener('scroll', onNavScroll, { passive: true });
+  onNavScroll();
+
+  /* Reveal animations */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: 0.15 });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('in'));
+  }
+});
+
+/* ─────────────────────────────────────────────
+   UNIFIED SCROLL ANIMATION
+   Phase 1 (p 0→0.14):   "Three Forces" title
+   Phase 2 (p 0.10→0.70): 3 Lux pillar panels
+   Phase 3 (p 0.64→1.00): Labels fly → triangle draws
+───────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+
+  if (window.innerWidth <= 820) return;
+
+  const outer       = document.getElementById('triOuter');
+  const sticky      = document.getElementById('triSticky');
+  const titleArea   = document.getElementById('triTitleArea');
+  const luxInner    = document.getElementById('luxInner');
+  const layer       = document.getElementById('triLayer');
+  const flyLabelsOv = document.getElementById('flyLabelsOverlay');
+  const scrollCue   = document.getElementById('triScrollCue');
+  const svg         = document.getElementById('triSvg');
+  const edgePath    = document.getElementById('triEdgePath');
+  const innerPoly   = document.getElementById('triInnerPoly');
+  const techNodes   = document.getElementById('triTechNodes');
+
+  const luxLabelEls = [0,1,2].map(i => document.getElementById('luxLabel'+i));
+  const luxPanelEls = [0,1,2].map(i => document.getElementById('luxPanel'+i));
+  const flyIcons    = [0,1,2].map(i => document.getElementById('flyIcon'+i));
+  const flyLabels   = [0,1,2].map(i => document.getElementById('flyLabel'+i));
+  const techTags    = [0,1,2,3,4,5].map(i => document.getElementById('tt'+i));
+  const centerLabel = document.getElementById('triCenterLabel');
+
+  if (!outer || !sticky || !edgePath) return;
+
+  /* Math */
+  function lerp(a, b, t){ return a + (b - a) * t; }
+  function clamp01(t){ return Math.max(0, Math.min(1, t)); }
+  function ease(t){ return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+  function prog(t, s, e){ return ease(clamp01((t - s) / (e - s))); }
+
+  /* Label offsets from vertex center to label center */
+  const LABEL_OFFSETS = [
+    { dx:   0, dy:  -90 },  /* Energy:     above vertex        */
+    { dx:   0, dy:   85 },  /* Industrial: below vertex, centred */
+    { dx:   0, dy:   85 },  /* Digital:    below vertex, centred */
+  ];
+
+  /* Barycentric positions for tech tags */
+  const TECH_BARY = [
+    [0.72, 0.14, 0.14],  /* Smart Grids    — near Energy   */
+    [0.43, 0.43, 0.14],  /* Energy Storage — Energy↔Ind.  */
+    [0.43, 0.14, 0.43],  /* Data Centres   — Energy↔Dig.  */
+    [0.14, 0.72, 0.14],  /* Industrial Heat — near Ind.   */
+    [0.14, 0.43, 0.43],  /* Robotics / IoT — Ind.↔Dig.    */
+    [0.14, 0.14, 0.72],  /* Edge Compute   — near Digital */
+  ];
+
+  let W, H, startPos, endPos, pathLength = 3000, measured = false;
+
+  function getEndPos(){
+    const topHalf    = Math.min(W * 0.21, H * 0.25);   /* controls height          */
+    const bottomHalf = Math.min(W * 0.30, H * 0.36);   /* wider base for tech tags */
+    const triH       = topHalf * Math.sqrt(3);
+    const cx = W * 0.50, cy = H * 0.62;
+    return [
+      { x: cx,              y: cy - triH * 2/3 },  /* Energy      (top)          */
+      { x: cx - bottomHalf, y: cy + triH / 3   },  /* Industrial  (bottom-left)  */
+      { x: cx + bottomHalf, y: cy + triH / 3   },  /* Digital     (bottom-right) */
+    ];
+  }
+
+  function measure(){
+    const sRect = sticky.getBoundingClientRect();
+    W = sticky.offsetWidth;
+    H = sticky.offsetHeight;
+
+    /* Start positions = centers of lux-label elements relative to sticky container.
+       The lux-inner is position:absolute so its children are always laid out;
+       getBoundingClientRect() returns correct positions regardless of scroll. */
+    startPos = luxLabelEls.map(el => {
+      const r = el.getBoundingClientRect();
+      return {
+        x: r.left + r.width  / 2 - sRect.left,
+        y: r.top  + r.height / 2 - sRect.top,
+      };
+    });
+
+    endPos = getEndPos();
+
+    /* SVG sizing */
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.setAttribute('width',  W);
+    svg.setAttribute('height', H);
+
+    /* Triangle edge path */
+    const [e, ind, dig] = endPos;
+    edgePath.setAttribute('d', `M ${e.x},${e.y} L ${ind.x},${ind.y} L ${dig.x},${dig.y} Z`);
+    try { pathLength = edgePath.getTotalLength() || 3000; } catch(err){ pathLength = 3000; }
+    edgePath.style.strokeDasharray  = pathLength;
+    edgePath.style.strokeDashoffset = pathLength;
+
+    /* Inner polygon */
+    const cx = (e.x + ind.x + dig.x) / 3;
+    const cy = (e.y + ind.y + dig.y) / 3;
+    const f  = 0.55;
+    innerPoly.setAttribute('points', endPos.map(p => `${cx+(p.x-cx)*f},${cy+(p.y-cy)*f}`).join(' '));
+
+    /* Tech tag positions */
+    TECH_BARY.forEach((bary, i) => {
+      if (techTags[i]) {
+        const tx = bary[0]*endPos[0].x + bary[1]*endPos[1].x + bary[2]*endPos[2].x;
+        const ty = bary[0]*endPos[0].y + bary[1]*endPos[1].y + bary[2]*endPos[2].y;
+        techTags[i].style.left = tx + 'px';
+        techTags[i].style.top  = ty + 'px';
+      }
+    });
+
+    /* Fly icons — positioned at vertices, opacity managed in update() */
+    flyIcons.forEach((icon, i) => {
+      icon.style.left    = (endPos[i].x - 32) + 'px';
+      icon.style.top     = (endPos[i].y - 32) + 'px';
+      icon.style.opacity = '0';
+    });
+
+    flyLabels.forEach(lbl => { lbl.style.opacity = '0'; });
+
+    measured = true;
+  }
+
+  /* ── Scroll phase timeline (p = 0 → 1 across tri-outer = 500vh) ──
+     p 0.00       : title + lux visible, Energy panel active, scroll cue shown
+     p 0.00→0.06  : scroll cue fades out
+     p 0.00→0.40  : panel cycling (Energy 0→0.13, Industrial 0.13→0.27, Digital 0.27→0.40)
+     p 0.40→0.52  : title + lux fade OUT together
+     p 0.45→0.57  : fly-labels fade IN (at lux-label positions)
+     p 0.49→0.67  : fly-labels fly to triangle vertex offsets
+     p 0.47→0.59  : tri-layer fades in
+     p 0.57→0.67  : vertex icons appear
+     p 0.59→0.71  : triangle edge draws
+     p 0.69→0.77  : convergence center label
+     p 0.67→0.81  : tech tags (staggered)
+  */
+  function update(p){
+    if (!measured) return;
+
+    /* Scroll cue */
+    if (scrollCue) scrollCue.style.opacity = String(clamp01(1 - p / 0.06));
+
+    /* Title + Lux: visible from start, fade together before triangle */
+    const sectionAlpha = 1 - prog(p, 0.40, 0.52);
+    titleArea.style.opacity      = String(sectionAlpha);
+    luxInner.style.opacity       = String(sectionAlpha);
+    luxInner.style.pointerEvents = sectionAlpha > 0.05 ? 'auto' : 'none';
+
+    /* Panel cycling: Energy / Industrial / Digital across p 0 → 0.40 */
+    const panelIdx = Math.min(2, Math.floor(clamp01(p / 0.40) * 3));
+    luxLabelEls.forEach((l,  i) => l.classList.toggle('active', i === panelIdx));
+    luxPanelEls.forEach((pn, i) => pn.classList.toggle('active', i === panelIdx));
+
+    /* Tri-layer */
+    layer.style.opacity = String(prog(p, 0.47, 0.59));
+
+    /* Flying labels: fade in as lux fades, then fly to vertex offsets */
+    const lblAlpha = prog(p, 0.45, 0.57);
+    const lblMove  = prog(p, 0.49, 0.67);
+    flyLabels.forEach((lbl, i) => {
+      lbl.style.opacity = String(lblAlpha);
+      const sp  = startPos[i];            /* lux-label center (sticky-relative) */
+      const off = LABEL_OFFSETS[i];
+      lbl.style.left = lerp(sp.x, endPos[i].x + off.dx, lblMove) + 'px';
+      lbl.style.top  = lerp(sp.y, endPos[i].y + off.dy, lblMove) + 'px';
+    });
+
+    /* Vertex icons — appear at vertices after labels arrive */
+    flyIcons.forEach(icon => { icon.style.opacity = String(prog(p, 0.57, 0.67)); });
+
+    /* Triangle edge draw */
+    edgePath.style.strokeDashoffset = String(pathLength * (1 - prog(p, 0.59, 0.71)));
+
+    /* Convergence center label */
+    if (centerLabel) {
+      const cx = (endPos[0].x + endPos[1].x + endPos[2].x) / 3;
+      const cy = (endPos[0].y + endPos[1].y + endPos[2].y) / 3;
+      centerLabel.style.left    = cx + 'px';
+      centerLabel.style.top     = cy + 'px';
+      centerLabel.style.opacity = String(prog(p, 0.69, 0.77));
+    }
+
+    /* Tech tags — staggered appearance */
+    techTags.forEach((tag, i) => {
+      if (tag) tag.style.opacity = String(prog(p, 0.67 + i * 0.02, 0.75 + i * 0.02) * 0.48);
+    });
+  }
+
+  /* ── Init ── */
+  let ticking = false;
+  function onScroll(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const totalScroll = outer.offsetHeight - window.innerHeight;
+      if (totalScroll <= 0){ ticking = false; return; }
+      const p = clamp01(-outer.getBoundingClientRect().top / totalScroll);
+      update(p);
+      ticking = false;
+    });
+  }
+
+  setTimeout(() => {
+    measure();
+    update(0);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => { measured = false; measure(); onScroll(); });
+    onScroll();
+  }, 80);
+
+/* ─────────────────────────────────────────────
+   MODAL
+───────────────────────────────────────────── */
+  const modal    = document.getElementById('itModal');
+  const closeBtn = document.getElementById('closeItModal');
+  const titleEl  = document.getElementById('itModalTitle');
+  const subjEl   = document.getElementById('itModalSubject');
+
+  function openModal(type){
+    titleEl.textContent = type === 'lp' ? 'For Investors' : 'For Founders';
+    subjEl.value        = type === 'lp' ? 'Investor Enquiry — Infratech Triangle' : 'Founder Enquiry — Infratech Triangle';
+    modal.classList.add('active');
+    document.documentElement.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function closeModal(){
+    modal.classList.remove('active');
+    document.documentElement.style.removeProperty('overflow');
+  }
+
+  const lpBtn  = document.getElementById('openModalLP');
+  const fndBtn = document.getElementById('openModalFounder');
+  if (lpBtn)    lpBtn.addEventListener('click',  () => openModal('lp'));
+  if (fndBtn)   fndBtn.addEventListener('click', () => openModal('founder'));
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (modal)    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) closeModal();
+  });
+
+}); /* DOMContentLoaded */
+
+})();
+</script>
+
+</body>
+</html>

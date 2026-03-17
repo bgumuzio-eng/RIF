@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Investments — Resilient Infratech Fund</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Overrides locales SOLO para este documento / bloque -->
+  <style>
+    /* === Why explainer: quitar flecha + permitir más ancho === */
+    #why-explainer{ max-width:min(48vw,820px)!important; }
+    #why-explainer p{ padding-left:0!important; margin-left:0!important; }
+    #why-explainer p::before{ content:none!important; }
+    @media (max-width:1024px){ #why-explainer{ max-width:100%!important; } }
+
+    /*  estilos de menú móvil */
+    @media (max-width:1024px){
+      .site-nav .links{ right:var(--space); width:min(280px,88vw); }
+      .site-nav .links a{ padding:12px; }
+    }
+
+    /* ── Infinite carousel ── */
+    .carousel-track-outer {
+      width: 100%;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.09);
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+      background: rgba(0,0,0,0.18);
+      padding: 40px 0;
+      margin-top: 48px;
+      /* fade edges */
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      animation: carouselScroll 38s linear infinite;
+    }
+    .carousel-track:hover { animation-play-state: paused; }
+
+    @keyframes carouselScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .c-card {
+      flex-shrink: 0;
+      width: 280px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .25s, transform .25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .c-card:hover {
+      border-color: rgba(0,191,255,0.45);
+      transform: translateY(-4px);
+    }
+
+    .c-img {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+    }
+    .c-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.8) saturate(0.85);
+      transition: filter .3s, transform .4s;
+    }
+    .c-card:hover .c-img img {
+      filter: brightness(0.95) saturate(1);
+      transform: scale(1.04);
+    }
+
+    .c-body {
+      padding: 18px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .c-badge {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+    .c-body p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-nav">
+  <div class="container">
+    <div class="bar">
+      <a class="brand" href="index.html"><img src="img/logo-negro.png" alt="RIF logo"></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+      </button>
+      <nav class="links" id="mainNavLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <a href="investments.html">Investments</a>
+        <a class="cta" href="contact.html">Get in Touch</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- HERO (idéntico al de ABOUT, solo cambia la imagen) -->
+<section class="intro about-hero">
+  <div class="media">
+    <img src="img/fondos/cuadrados.jpeg" alt="Investments">
+  </div>
+  <div class="hero-copy reveal" data-reveal>
+    <div class="bar"></div>
+    <div class="lines">
+      <span class="line1"> Backing the Builders</span>
+      <span class="line2"> of&nbsp;Tomorrow</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY RIF -->
+<section class="section">
+  <div class="container">
+    <div class="why-band">
+      <div class="why-row">
+        <div class="why-tag reveal-left" data-reveal>
+          <span style="font-size:clamp(1.8rem,3vw,2.6rem); font-weight:800; color:#fff; line-height:1.2;">European hard-tech,</span>
+          <span style="font-size:clamp(1.8rem,3vw,2.6rem); font-weight:800; color:#fff; line-height:1.2;">from Late-Seed to Series A.</span>
+        </div>
+        <!-- Caja de texto  -->
+        <div class="why-text reveal-right" data-reveal="late" id="why-explainer" style="margin-left:auto;">
+          <p style="font-size:clamp(1rem,1.45vw,1.2rem); line-height:1.7; color:#d8e6f8; margin:0;">
+            We partner with entrepreneurs tackling complex, capital-heavy challenges through hard-tech innovation,
+            by investing from €1m to €5m at Series A across Europe.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="inv-head">
+      <h1 class="appear">INVESTMENTS</h1>
+      <hr class="section-rule">
+      <p class="disclaimer" style="margin-top:16px;">For illustrative purposes only — investments shown were made by team members at GVC and GNE Ventures prior to RIF I and are not attributable to RIF I.</p>
+    </div>
+  </div>
+
+  <!-- Infinite carousel -->
+  <div class="carousel-track-outer">
+    <div class="carousel-track" id="carouselTrack">
+
+      <!-- ── Set 1 ── -->
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/We Smart Park.jpeg" alt="We Smart Park"></div>
+        <div class="c-body">
+          <span class="c-badge">WE SMART PARK</span>
+          <p>Smart parking platform connecting drivers with underused private spaces.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/Noleggio.jpg" alt="Noleggio Energia"></div>
+        <div class="c-body">
+          <span class="c-badge">NOLEGGIO ENERGIA</span>
+          <p>Flexible energy solutions — photovoltaic systems and storage on a rental model.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/Travel Compositor.jpeg" alt="Travel Compositor"></div>
+        <div class="c-body">
+          <span class="c-badge">TRAVEL COMPOSITOR</span>
+          <p>Advanced booking engine technology for the travel industry.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/Vytrus.jpeg" alt="Vytrus Biotech"></div>
+        <div class="c-body">
+          <span class="c-badge">VYTRUS BIOTECH</span>
+          <p>Plant stem cell biotechnology for high-performance active ingredients.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/ve-box_venvirotech.jpg" alt="VENviroTech"></div>
+        <div class="c-body">
+          <span class="c-badge">VENviroTech</span>
+          <p>Sustainable environmental technology for industrial waste management.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/Noucor.jpeg" alt="Noucor"></div>
+        <div class="c-body">
+          <span class="c-badge">NOUCOR</span>
+          <p>Pharmaceutical innovation committed to improving quality of life.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/TSS.jpg" alt="The Sampling Solutions"></div>
+        <div class="c-body">
+          <span class="c-badge">THE SAMPLING SOLUTIONS</span>
+          <p>Digitalized sampling, inspection and audit processes for industry.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/Vacway.jpeg" alt="Vacway"></div>
+        <div class="c-body">
+          <span class="c-badge">VACWAY</span>
+          <p>Technology partner for the amusement and water park industry.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/Solarmente.jpg" alt="Solarmente"></div>
+        <div class="c-body">
+          <span class="c-badge">SOLARMENTE</span>
+          <p>Intelligent solar solutions for residential and commercial clean energy.</p>
+        </div>
+      </a>
+
+      <!-- ── Set 2 (duplicate for seamless loop) ── -->
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/We Smart Park.jpeg" alt="We Smart Park"></div>
+        <div class="c-body">
+          <span class="c-badge">WE SMART PARK</span>
+          <p>Smart parking platform connecting drivers with underused private spaces.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/Noleggio.jpg" alt="Noleggio Energia"></div>
+        <div class="c-body">
+          <span class="c-badge">NOLEGGIO ENERGIA</span>
+          <p>Flexible energy solutions — photovoltaic systems and storage on a rental model.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/Travel Compositor.jpeg" alt="Travel Compositor"></div>
+        <div class="c-body">
+          <span class="c-badge">TRAVEL COMPOSITOR</span>
+          <p>Advanced booking engine technology for the travel industry.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/Vytrus.jpeg" alt="Vytrus Biotech"></div>
+        <div class="c-body">
+          <span class="c-badge">VYTRUS BIOTECH</span>
+          <p>Plant stem cell biotechnology for high-performance active ingredients.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/ve-box_venvirotech.jpg" alt="VENviroTech"></div>
+        <div class="c-body">
+          <span class="c-badge">VENviroTech</span>
+          <p>Sustainable environmental technology for industrial waste management.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/Noucor.jpeg" alt="Noucor"></div>
+        <div class="c-body">
+          <span class="c-badge">NOUCOR</span>
+          <p>Pharmaceutical innovation committed to improving quality of life.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/TSS.jpg" alt="The Sampling Solutions"></div>
+        <div class="c-body">
+          <span class="c-badge">THE SAMPLING SOLUTIONS</span>
+          <p>Digitalized sampling, inspection and audit processes for industry.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/investments/Vacway.jpeg" alt="Vacway"></div>
+        <div class="c-body">
+          <span class="c-badge">VACWAY</span>
+          <p>Technology partner for the amusement and water park industry.</p>
+        </div>
+      </a>
+      <a class="c-card" href="contact.html">
+        <div class="c-img"><img src="img/Solarmente.jpg" alt="Solarmente"></div>
+        <div class="c-body">
+          <span class="c-badge">SOLARMENTE</span>
+          <p>Intelligent solar solutions for residential and commercial clean energy.</p>
+        </div>
+      </a>
+
+    </div><!-- /carousel-track -->
+  </div><!-- /carousel-track-outer -->
+</section>
+
+<!-- Disclaimer en cursiva y pequeño -->
+<div style="font-size:0.85rem; font-style:italic; text-align:center; color:#cfd6df; margin:20px auto 10px; max-width:1000px; line-height:1.5;">
+  This is not an offer to sell or solicitation to buy securities. For professional investors only.
+  Investments in FCREs are illiquid and involve risk, including loss of capital. Please refer to the fund documents.
+</div>
+
+<footer>
+  <div class="container">© 2025 Resilient Infratech Fund. All rights reserved.</div>
+</footer>
+
+<!-- JS: NAVBAR (toggle) + animaciones -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    /* ===== NAVBAR HAMBURGUESA ===== */
+    const header    = document.querySelector('.site-nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.getElementById('mainNavLinks');
+
+    if (navToggle && navLinks) {
+      // abrir/cerrar
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        navToggle.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // cerrar al cambiar a escritorio
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded','false');
+        }
+      });
+      // cerrar al pulsar un enlace
+      navLinks.querySelectorAll('a').forEach(a =>
+        a.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded','false');
+        })
+      );
+    }
+
+    // Sombra en la barra al hacer scroll
+    const onScrollHeader = () => {
+      if (window.scrollY > 10) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScrollHeader, { passive: true });
+    onScrollHeader();
+
+    /* ===== ANIMACIONES ===== */
+    const canIO = 'IntersectionObserver' in window;
+    if (canIO) {
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.25 });
+      document.querySelectorAll('[data-reveal], .reveal, .reveal-left, .reveal-right, .appear, .appear-delay')
+        .forEach(el=>io.observe(el));
+    } else {
+      document.querySelectorAll('[data-reveal], .reveal, .reveal-left, .reveal-right, .appear, .appear-delay')
+        .forEach(el=>el.classList.add('in'));
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>About — Resilient Infratech Fund</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Ajustes específicos: TEAM 5–5 y mobile tuning -->
+  <style>
+    /* Team 5x2 y roles centrados */
+    .team .member p{ text-align:center; margin:0 0 8px 0; }
+    .team-grid{
+      display:grid; grid-template-columns:repeat(5,1fr);
+      gap:clamp(18px,3vw,36px); justify-items:center; max-width:1200px; margin:0 auto;
+    }
+    .team .member{ width:100%; max-width:220px; display:flex; flex-direction:column; align-items:center; }
+    .team .member img{ width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--radius); }
+    .member.placeholder .ph{ width:100%; aspect-ratio:4/5; border-radius:var(--radius);
+      background:linear-gradient(145deg,#1f364d,#253d58); display:flex; align-items:center; justify-content:center;
+      font-weight:800; color:#cfe3f5; box-shadow:0 6px 18px rgba(0,0,0,.25) inset; }
+    .member.placeholder .overlay{ display:none; }
+
+    /* --- Mobile fixes para About --- */
+    .about-hero .media{ height: clamp(520px, 70vh, 820px); }
+    /* Compactar panel y tipografías */
+    @media (max-width:1024px){
+      .about-panel{ padding:clamp(18px,4vw,28px); }
+      .about-strap{ font-size:clamp(.86rem,1.2vw,1rem); line-height:1.45; }
+      .about-card p{ font-size:clamp(.95rem,1.4vw,1.02rem); line-height:1.65; }
+    }
+    @media (max-width:768px){
+      .about-grid{ grid-template-columns:1fr !important; gap:18px; }
+      .brand-logo img{ width:clamp(180px,60vw,260px); }
+      .about-strap{ margin:6px 0 18px; }
+      /* Evitar desbordes de palabras muy largas */
+      .about-card p, .partner-subtitle, .ps-sub, .ps-num{
+        overflow-wrap:anywhere; word-break:normal;
+      }
+      /* Recuadros (sp-card) más compactos */
+      .sp-card{ padding:clamp(16px,4vw,22px); border-radius:12px; }
+      .partner-light{ padding:clamp(26px,6vw,40px) var(--space); }
+      /* Cabecera partner a 1 columna */
+      .ps-intro{ grid-template-columns:1fr !important; text-align:left; }
+      .ps-logo{ width:clamp(160px, 60vw, 240px); justify-self:start; }
+      /* Banda de KPIs: 1 columna para que no se aplasten */
+      .ps-band{ grid-template-columns:1fr !important; gap:12px; }
+      .ps-item{ align-items:flex-start; text-align:left; }
+      /* Línea blanca (Gaesco) más aire */
+      .ps-bottom{ grid-template-columns:1fr !important; }
+      .ps-logo2{ width:clamp(200px, 70vw, 300px); }
+    }
+    /* Navbar móvil: ancho del menú y clics cómodos */
+    @media (max-width:1024px){
+      .site-nav .links{ right:var(--space); width:min(280px, 88vw); }
+      .site-nav .links a{ padding:12px; }
+    }
+
+    /* Team responsive */
+    @media(max-width:1024px){ .team-grid{ grid-template-columns:repeat(3,1fr); } }
+    @media(max-width:640px){ .team-grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="container">
+    <div class="bar">
+      <a class="brand" href="index.html"><img src="img/logo-negro.png" alt="RIF logo"></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+      </button>
+      <nav class="links" id="mainNavLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <a href="investments.html">Investments</a>
+        <a href="infratech-triangle.html">The Infratech Triangle</a>
+        <a class="cta" href="contact.html">Get in Touch</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+  <!-- HERO -->
+  <section class="intro about-hero">
+    <div class="media">
+      <img src="img/fondos/barcelona.png" alt="About RIF">
+    </div>
+    <div class="hero-copy reveal" data-reveal>
+      <div class="bar"></div>
+      <div class="lines">
+        <span class="line1">Where capital accelerates</span>
+        <span class="line2">climate infrastructure</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section container">
+    <div class="about-panel">
+      <div class="about-head about-head--left appear">
+        <h1>ABOUT US</h1><br><br>
+        <p class="about-strap">
+          RIF IS A <strong>REGULATED FCRE</strong> COMBINING INSTITUTIONAL FUND MANAGEMENT AND DEEP SECTOR
+          EXPERTISE IN <strong>CLIMATE AND INFRASTRUCTURE</strong>, POWERED BY <strong>GVC GAESCO AND GNE VENTURES</strong>
+        </p>
+      </div><br><br>
+
+      <div class="about-grid appear-delay">
+        <aside class="brand-logo">
+          <img src="img/logo-negro.png" alt="RIF logo">
+        </aside>
+
+        <div>
+          <article class="about-card appear">
+            <h2>Our Vision</h2>
+            <p>We back <strong>hard-tech founders</strong> building the next generation of <strong>climate infrastructure—assets</strong> with enduring utility, defensible economics, and measurable impact.</p>
+          </article>
+
+          <article class="about-card appear">
+            <h2>Our Principles</h2>
+            <p>We invest in transformative technologies that generate attractive returns while creating environmental value. Through strategic partnerships and long-term vision, we build enduring assets shaping <strong>tomorrow’s infrastructure</strong>.</p>
+          </article>
+
+          <article class="about-card appear">
+            <h2>Our Investment Approach</h2>
+            <p>Stage: Seed–Series A | Ticket: €1–5m (initial) | Geography: EU+ | Role: Lead/co-lead
+Focus: (1) Industrial decarbonization, (2) Urban Regeneration, (3) Digitalization and (4) Energy.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGIC PARTNERS -->
+  <section class="section partner partner-light" id="partners">
+    <div class="container">
+      <h2 class="partner-title">RIF, powered by GVC Gaesco and GNE Ventures</h2>
+      <hr class="section-rule partner-underline">
+
+      <!-- GNE Ventures -->
+      <div class="sp-card sp-blue same-size">
+        <div class="ps-intro" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(16px, 3vw, 32px);align-items:center;">
+          <img class="ps-logo" src="img/logos/ventures-v3.jpeg" alt="GNE Ventures logo">
+          <div>
+            <h1 class="partner-subtitle">GNE VENTURES: SOURCING, SECTOR EXPERTISE, PORTFOLIO SUPPORT.</h1>
+            <p>GNE Ventures is an Energy Transition advisory &amp; Infratech investment firm specializing in the design, setup, fundraising, and management of investment vehicles.</p>
+          </div>
+        </div>
+
+        <div class="ps-band">
+          <div class="ps-item">
+            <span class="ps-sub">OPERATING IN<br>CLEAN TECH</span>
+            <strong class="ps-num">17 years</strong>
+          </div>
+          <div class="ps-item">
+            <span class="ps-sub">STRUCTURED &amp; FUNDED IN<br>CLIMATE &amp; INFRASTRUCTURE PROJECTS</span>
+            <strong class="ps-num">€120m+</strong>
+          </div>
+          <div class="ps-item">
+            <span class="ps-sub">INVESTMENTS</span>
+            <strong class="ps-num">15</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- GVC Gaesco -->
+      <div class="sp-card sp-white same-size">
+        <div class="ps-bottom">
+          <img class="ps-logo2" src="img/gaesco1.png" alt="GVC Gaesco logo">
+          <div>
+            <h1 class="partner-subtitle">GVC Gaesco (AIFM): SPANISH REGULATED FUND MANAGEMENT, EXECUTION, INVESTOR ACCESS.</h1>
+            <p>As a strategic fund partner for RIF, GVC Gaesco strengthens our fund with its 50+ years expertise in VC/PE fund structuring, alternative asset management, and investor access. As a regulated AIFM, it provides a robust framework for investment execution.</p>
+          </div>
+        </div>
+
+        <div class="kpis-plain">
+          <div class="kp"><strong class="n">€4,500</strong><span class="s">AUM</span></div>
+          <div class="kp"><strong class="n">8</strong><span class="s">VC FUNDS</span></div>
+          <div class="kp"><strong class="n">+50</strong><span class="s">YEARS OF HISTORY</span></div>
+          <div class="kp"><strong class="n">+300</strong><span class="s">PROFESSIONALS</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section team">
+    <div class="container">
+      <h2>OUR TEAM</h2>
+      <hr class="section-rule">
+      <div class="team-grid">
+        <!-- 10  -->
+        <div class="member"><p>Investment Analyst</p><img src="img/team/anna-latorre.jpg" alt="Anna Latorre"><div class="overlay"><p>Anna Latorre</p><a href="https://www.linkedin.com/in/annalatorregarcia/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+        <div class="member"><p>Investment Analyst</p><img src="img/team/Silvia Solé.jpg" alt="Silvia Solé"><div class="overlay"><p>Silvia Solé</p><a href="https://www.linkedin.com/in/silviasoleterol/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+         <div class="member"><p>Investment Analyst</p><img src="img/team/floyd.png" alt="Floyd Schindler"><div class="overlay"><p>Floyd Schindler</p><a href="https://www.linkedin.com/in/floyd-schindler-997427204/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+        <div class="member"><p>Investment Manager</p><img src="img/team/borja-gumuzio.jpg" alt="Borja Gumuzio"><div class="overlay"><p>Borja Gumuzio</p><a href="https://www.linkedin.com/in/borja-gumuzio-morenes-6a052665/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+        <div class="member"><p>Head of ESG</p><img src="img/team/Briera Dale.jpg" alt="Briera Dale"><div class="overlay"><p>Briera Dale</p><a href="https://www.linkedin.com/in/brieradale/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+        <div class="member"><p>Head of Investor Relations</p><img src="img/team/Hale Yildiz.jpeg" alt="Hale Yildiz"><div class="overlay"><p>Hale Yildiz</p><a href="https://www.linkedin.com/in/hale-yildiz/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+         <div class="member"><p>CFO</p><img src="img/team/giovanni.png" alt="Giovanni Lazzeri"><div class="overlay"><p>Giovanni Lazzeri</p><a href="https://www.linkedin.com/in/giovanni-lazzeri-198b24/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+        <div class="member"><p>Partner</p><img src="img/team/Paco Illueca.jpg" alt="Paco Illueca"><div class="overlay"><p>Paco Illueca</p><a href="https://www.linkedin.com/in/pacoillueca/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+        <div class="member"><p>Managing Partner</p><img src="img/team/Davide Cannarozzi.jpg" alt="Davide Cannarozzi"><div class="overlay"><p>Davide Cannarozzi</p><a href="https://www.linkedin.com/in/davidecannarozzi/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <div style="font-size:0.85rem; font-style:italic; text-align:center; color:#cfd6df; margin:20px auto 10px; max-width:1000px; line-height:1.5;">
+    This is not an offer to sell or solicitation to buy securities. For professional investors only.
+    Investments in FCREs are illiquid and involve risk, including loss of capital. Please refer to the fund documents.
+  </div>
+
+  <footer><div class="container">© 2025 Resilient Infratech Fund. All rights reserved.</div></footer>
+
+  <!-- Navbar + animaciones -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header    = document.querySelector('.site-nav');
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks  = document.getElementById('mainNavLinks');
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          const open = navLinks.classList.toggle('open');
+          navToggle.classList.toggle('open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 1024) {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded','false');
+          }
+        });
+        navLinks.querySelectorAll('a').forEach(a =>
+          a.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded','false');
+          })
+        );
+      }
+
+      const onScroll = () => { if (window.scrollY > 10) header.classList.add('scrolled'); else header.classList.remove('scrolled'); };
+      onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReduced && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target);} });
+        }, { threshold: 0.25 });
+        document.querySelectorAll('[data-reveal], .appear, .appear-delay').forEach(el => io.observe(el));
+      } else {
+        document.querySelectorAll('[data-reveal], .appear, .appear-delay').forEach(el => el.classList.add('in'));
+      }
+    });
+  </script>
+</body>
+</html>

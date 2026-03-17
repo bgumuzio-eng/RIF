@@ -1,0 +1,299 @@
+{"type":"eventLog","action":"eventLog","info":"create_log_dir","results":"Templately\\Core\\Importer\\FullSiteImport::import::368","timestamp":"2025-06-16 21:18:17"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::381","timestamp":"2025-06-16 21:18:17"}
+{"action":"updateLog","type":"writing_permission_check","progress":100,"message":"Permission Passed","status":"complete","timestamp":"2025-06-16 21:18:17"}
+{"action":"updateLog","type":"download","progress":1,"message":"Downloading Template Pack","timestamp":"2025-06-16 21:18:17"}
+{"action":"updateLog","type":"download","progress":57,"message":"Downloading Template Pack","timestamp":"2025-06-16 21:18:18"}
+{"action":"updateLog","type":"download","progress":100,"message":"Downloading Template Pack","status":"complete","timestamp":"2025-06-16 21:18:18"}
+{"type":"continue","action":"continue","info":"download_zip","results":"Templately\\Core\\Importer\\FullSiteImport::import::403","timestamp":"2025-06-16 21:18:18"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::381","timestamp":"2025-06-16 21:18:18"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2025-06-16 21:18:18"}
+{"action":"eventLog","type":"dependencies","progress":0,"message":"Updating customizer settings.","timestamp":"2025-06-16 21:18:18"}
+{"action":"updateLog","type":"theme","progress":0,"message":"Installing and Activating Theme: Twenty Twenty-Four","timestamp":"2025-06-16 21:18:18"}
+{"action":"updateLog","status":"complete","message":"Activated theme: Twenty Twenty-Four","type":"theme","progress":100,"timestamp":"2025-06-16 21:18:19"}
+{"action":"updateLog","type":"plugin","progress":0,"message":"Installing Required Plugins: Fluent Forms","timestamp":"2025-06-16 21:18:19"}
+{"action":"updateLog","type":"plugin","progress":50,"message":"Installing Required Plugins: NotificationX","timestamp":"2025-06-16 21:18:22"}
+{"action":"updateLog","status":"complete","message":"Installed Required Plugins (2\/2)","type":"plugin","progress":100,"timestamp":"2025-06-16 21:18:23"}
+{"action":"eventLog","type":"dependencies","progress":100,"message":"Updating customizer settings.","status":"complete","timestamp":"2025-06-16 21:18:23"}
+{"type":"continue","action":"continue","name":"","index":0,"results":null,"timestamp":"2025-06-16 21:18:23"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::381","timestamp":"2025-06-16 21:18:25"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2025-06-16 21:18:25"}
+{"type":"continue","action":"continue","name":"","index":1,"results":null,"timestamp":"2025-06-16 21:18:25"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::381","timestamp":"2025-06-16 21:18:26"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2025-06-16 21:18:26"}
+{"action":"eventLog","type":"customizer","progress":0,"message":"Updating customizer settings.","timestamp":"2025-06-16 21:18:26"}
+{"action":"eventLog","type":"customizer","progress":0,"message":"Updating customizer settings.","timestamp":"2025-06-16 21:18:26"}
+{"action":"eventLog","type":"customizer","progress":100,"message":"Updating customizer settings.","status":"complete","timestamp":"2025-06-16 21:18:26"}
+{"type":"continue","action":"continue","name":"","index":2,"results":null,"timestamp":"2025-06-16 21:18:26"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::381","timestamp":"2025-06-16 21:18:27"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2025-06-16 21:18:27"}
+{"action":"eventLog","type":"extra-content","progress":0,"message":"Importing Forms and Others Extra Contents","timestamp":"2025-06-16 21:18:27"}
+{"action":"eventLog","type":"extra-content","progress":100,"message":"Importing Forms and Others Extra Contents","status":"complete","timestamp":"2025-06-16 21:18:27"}
+{"type":"continue","action":"continue","name":"","index":3,"results":null,"timestamp":"2025-06-16 21:18:27"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::381","timestamp":"2025-06-16 21:18:29"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2025-06-16 21:18:29"}
+{"action":"updateLog","type":"templates","progress":0,"message":"Importing Templates (i.e: Header, Footer, etc)","timestamp":"2025-06-16 21:18:29"}
+{"action":"updateLog","type":"templates","progress":50,"message":"Importing Templates (i.e: Header, Footer, etc)","timestamp":"2025-06-16 21:18:29"}
+{"action":"updateLog","type":"templates","progress":100,"message":"Importing Templates (i.e: Header, Footer, etc)","status":"complete","timestamp":"2025-06-16 21:18:29"}
+{"action":"updateLog","type":"templates","progress":100,"message":"Importing Templates (i.e: Header, Footer, etc)","status":"complete","timestamp":"2025-06-16 21:18:29"}
+{"type":"continue","action":"continue","name":"","index":4,"results":null,"timestamp":"2025-06-16 21:18:29"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::381","timestamp":"2025-06-16 21:18:30"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2025-06-16 21:18:30"}
+{"action":"updateLog","type":"content","progress":0,"message":"Importing Gutenberg Page and Post Templates","timestamp":"2025-06-16 21:18:30"}
+{"action":"updateLog","type":"content","progress":0,"message":"Importing Gutenberg Page and Post Templates","timestamp":"2025-06-16 21:18:30"}
+{"action":"updateLog","type":"content","progress":20,"message":"Importing Gutenberg Page and Post Templates","timestamp":"2025-06-16 21:18:30"}
+{"action":"updateLog","type":"content","progress":100,"message":"Importing Gutenberg Page and Post Templates","status":"complete","timestamp":"2025-06-16 21:18:30"}
+{"action":"updateLog","type":"content","progress":100,"message":"Importing Gutenberg Page and Post Templates","status":"complete","timestamp":"2025-06-16 21:18:30"}
+{"action":"updateLog","type":"content","progress":100,"message":"Importing Gutenberg Page and Post Templates","status":"complete","timestamp":"2025-06-16 21:18:30"}
+{"action":"updateLog","type":"content","progress":100,"message":"Importing Gutenberg Page and Post Templates","status":"complete","timestamp":"2025-06-16 21:18:30"}
+{"action":"updateLog","type":"content","progress":100,"message":"Importing Gutenberg Page and Post Templates","status":"complete","timestamp":"2025-06-16 21:18:30"}
+{"type":"continue","action":"continue","name":"","index":5,"results":null,"timestamp":"2025-06-16 21:18:30"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::381","timestamp":"2025-06-16 21:18:31"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2025-06-16 21:18:31"}
+{"type":"continue","action":"continue","name":"","index":6,"results":null,"timestamp":"2025-06-16 21:18:31"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::381","timestamp":"2025-06-16 21:18:32"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2025-06-16 21:18:32"}
+{"action":"updateLog","type":"wp-content","progress":0,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2025-06-16 21:18:32"}
+{"action":"updateLog","type":"wp-content","progress":7,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2025-06-16 21:18:38"}
+{"action":"updateLog","type":"wp-content","progress":14,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2025-06-16 21:18:38"}
+{"action":"updateLog","type":"wp-content","progress":21,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2025-06-16 21:18:38"}
+{"action":"updateLog","type":"wp-content","progress":28,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2025-06-16 21:18:38"}
+{"action":"updateLog","type":"wp-content","progress":35,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2025-06-16 21:18:42"}
+{"action":"updateLog","type":"wp-content","progress":42,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2025-06-16 21:18:42"}
+{"action":"updateLog","type":"wp-content","progress":50,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2025-06-16 21:18:44"}
+{"action":"updateLog","type":"wp-content","progress":57,"message":"Importing Content (Pages, Posts, Products, Navigation)","timestamp":"2025-06-16 21:18:44"}
+{"action":"updateLog","type":"wp-content","progress":100,"message":"Importing Content (Pages, Posts, Products, Navigation)","status":"complete","timestamp":"2025-06-16 21:18:44"}
+{"type":"continue","action":"continue","name":"","index":7,"results":null,"timestamp":"2025-06-16 21:18:44"}
+{"type":"start","action":"eventLog","results":"Templately\\Core\\Importer\\FullSiteImport::import::381","timestamp":"2025-06-16 21:18:46"}
+{"action":"removeLog","type":"temp","progress":100,"timestamp":"2025-06-16 21:18:46"}
+{"action":"updateLog","type":"finalize","progress":0,"message":"Finalizing Your Imports","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"update","progress":1,"message":"Updating prepared data, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"updateLog","type":"finalize","progress":20,"message":"Finalizing Your Imports","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7033","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"update","progress":1,"message":"Updating prepared data, just a moment...","timestamp":"2025-06-16 21:18:46"}
+{"action":"updateLog","type":"finalize","progress":40,"message":"Finalizing Your Imports","timestamp":"2025-06-16 21:18:46"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7034","timestamp":"2025-06-16 21:18:48"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7035","timestamp":"2025-06-16 21:18:50"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7036","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"update","progress":1,"message":"Updating prepared data, just a moment...","timestamp":"2025-06-16 21:18:52"}
+{"action":"updateLog","type":"finalize","progress":60,"message":"Finalizing Your Imports","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7034","timestamp":"2025-06-16 21:18:52"}
+{"action":"eventLog","type":"finalize","progress":-1,"message":"Imported attachment: 7038","timestamp":"2025-06-16 21:18:54"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7038","timestamp":"2025-06-16 21:18:54"}
+{"action":"eventLog","type":"finalize","progress":-1,"message":"Imported attachment: 7039","timestamp":"2025-06-16 21:18:55"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7039","timestamp":"2025-06-16 21:18:55"}
+{"action":"eventLog","type":"finalize","progress":-1,"message":"Imported attachment: 7040","timestamp":"2025-06-16 21:18:57"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7040","timestamp":"2025-06-16 21:18:57"}
+{"action":"eventLog","type":"finalize","progress":-1,"message":"Imported attachment: 7041","timestamp":"2025-06-16 21:18:59"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7041","timestamp":"2025-06-16 21:18:59"}
+{"action":"eventLog","type":"finalize","progress":-1,"message":"Imported attachment: 7042","timestamp":"2025-06-16 21:19:00"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7042","timestamp":"2025-06-16 21:19:00"}
+{"action":"eventLog","type":"finalize","progress":-1,"message":"Imported attachment: 7043","timestamp":"2025-06-16 21:19:02"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7043","timestamp":"2025-06-16 21:19:02"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7044","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7045","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7046","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7047","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"query","progress":1,"message":"Finalizing query data, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"update","progress":1,"message":"Updating prepared data, just a moment...","timestamp":"2025-06-16 21:19:06"}
+{"action":"updateLog","type":"finalize","progress":80,"message":"Finalizing Your Imports","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7034","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7049","timestamp":"2025-06-16 21:19:06"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7050","timestamp":"2025-06-16 21:19:07"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7051","timestamp":"2025-06-16 21:19:10"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7052","timestamp":"2025-06-16 21:19:13"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7053","timestamp":"2025-06-16 21:19:16"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7054","timestamp":"2025-06-16 21:19:16"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7055","timestamp":"2025-06-16 21:19:17"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7056","timestamp":"2025-06-16 21:19:19"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7057","timestamp":"2025-06-16 21:19:21"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7058","timestamp":"2025-06-16 21:19:23"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7059","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7044","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7045","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7046","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7047","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"finalize","progress":-1,"message":"Imported attachment: 7030","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7030","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"finalize","progress":-1,"message":"Imported attachment: 7027","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7027","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"finalize","progress":-1,"message":"Imported attachment: 7026","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"success","progress":-1,"message":"Imported attachment: 7026","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"query","progress":1,"message":"Finalizing query data, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"prepare","progress":1,"message":"Preparing output for finalize, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"eventLog","type":"update","progress":1,"message":"Updating prepared data, just a moment...","timestamp":"2025-06-16 21:19:25"}
+{"action":"updateLog","type":"finalize","progress":100,"message":"Finalizing Your Imports","status":"complete","timestamp":"2025-06-16 21:19:26"}
+{"action":"updateLog","type":"finalize","progress":100,"message":"Finalizing Your Imports","status":"complete","timestamp":"2025-06-16 21:19:26"}
+{"type":"complete","action":"complete","results":{"attachments":0,"attachments_fail":0,"attachments_errors":[],"templates":2,"contents":{"page":5,"__attachments":0},"wp-content":{"post":12,"wp_navigation":2},"post_types":["Pages",null,"Posts"],"template_types":["footer","header"],"dependency_data":[]},"timestamp":"2025-06-16 21:19:26"}

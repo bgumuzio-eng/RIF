@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Get in Touch — Resilient Infratech Fund</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-nav">
+    <div class="container">
+      <div class="bar">
+        <a class="brand" href="index.html"><img src="img/logo-negro.png" alt="RIF logo"></a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span class="line"></span><span class="line"></span><span class="line"></span>
+        </button>
+        <nav class="links" id="mainNavLinks">
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <a href="investments.html">Investments</a>
+          <a href="infratech-triangle.html">The Infratech Triangle</a>
+          <a class="cta" href="contact.html">Get in Touch</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTACT -->
+  <main class="container section contact-wrap">
+    <form action="https://formspree.io/f/xovnvjle" method="POST" class="contact-card contact-animate" novalidate>
+      <h1 class="contact-title">Get in Touch</h1>
+      <hr class="section-rule">
+
+      <div class="cg anim">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" required
+               placeholder="John Doe"
+               pattern="[A-Za-zÀ-ÿ\s]{3,}"
+               title="Only letters and spaces, min 3 characters">
+      </div>
+
+      <div class="cg anim">
+        <label for="phone">Phone Number</label>
+        <input id="phone" name="phone" type="tel" required
+               placeholder="+34 600 000 000"
+               pattern="[0-9+\-\s]{6,}"
+               title="Digits, spaces, + or - (min 6)">
+      </div>
+
+      <div class="cg anim">
+        <label for="location">City / Country</label>
+        <input id="location" name="location" type="text" required
+               placeholder="City, Country"
+               pattern="[A-Za-zÀ-ÿ\s,]{2,}"
+               title="Letters and comma only (e.g. Melilla, Spain)">
+      </div>
+
+      <div class="cg anim">
+        <label for="email">Email Address</label>
+        <input id="email" name="_replyto" type="email" required
+               placeholder="you@example.com"
+               pattern="^[a-zA-Z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,24}$"
+               title="Use a real-looking email like you@example.com">
+      </div>
+
+      <div class="cg anim">
+        <label for="message">Message (optional)</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us anything we should know…"></textarea>
+      </div>
+
+      <!-- Anti-spam -->
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="New lead — RIF Contact Form">
+
+      <button type="submit" class="contact-btn anim">Send</button>
+    </form>
+  </main>
+
+ <!-- Disclaimer en cursiva y pequeño -->
+  <div style="font-size:0.85rem; font-style:italic; text-align:center; color:#cfd6df; margin:20px auto 10px; max-width:1000px; line-height:1.5;">
+    This is not an offer to sell or solicitation to buy securities. For professional investors only.
+    Investments in FCREs are illiquid and involve risk, including loss of capital. Please refer to the fund documents.
+  </div>
+
+  <footer>
+    © 2025 Resilient Infratech Fund. All rights reserved.
+  </footer>
+
+  <!-- JS menú móvil + sticky nav -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header    = document.querySelector('.site-nav');
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks  = document.getElementById('mainNavLinks');
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          const open = navLinks.classList.toggle('open');
+          navToggle.classList.toggle('open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 1024) {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded','false');
+          }
+        });
+        navLinks.querySelectorAll('a').forEach(a =>
+          a.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded','false');
+          })
+        );
+      }
+
+      // Añade clase .scrolled para sombra en nav (igual que index/about)
+      const onScroll = () => {
+        if(window.scrollY > 10){ header.classList.add('scrolled'); }
+        else { header.classList.remove('scrolled'); }
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll);
+
+      // animaciones
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReduced && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.25 });
+
+        document
+          .querySelectorAll('[data-reveal], .appear, .appear-delay, .contact-animate, .anim')
+          .forEach(el => io.observe(el));
+      } else {
+        document
+          .querySelectorAll('[data-reveal], .appear, .appear-delay, .contact-animate, .anim')
+          .forEach(el => el.classList.add('in'));
+      }
+    });
+  </script>
+</body>
+</html>

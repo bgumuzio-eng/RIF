@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Resilient Infratech Fund — Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="video" href="video/video-home.mp4" type="video/mp4">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="home">
+
+<header class="site-nav transparent">
+  <div class="container">
+    <div class="bar">
+      <a class="brand" href="index.html"><img src="img/logo-negro.png" alt="RIF logo"></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+      </button>
+      <nav class="links" id="mainNavLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <a href="investments.html">Investments</a>
+        <a href="infratech-triangle.html">The Infratech Triangle</a>
+        <a class="cta" href="contact.html">Get in Touch</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="media">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="video/video-home.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hero-copy reveal" data-reveal>
+      <div class="bar"></div>
+      <div class="lines">
+        <span class="line1">THINK LIKE AN INFRA</span>
+        <span class="line2">ACT LIKE A VC</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY RIF -->
+  <section class="section">
+    <div class="container">
+      <div class="why-band">
+        <div class="why-row">
+          <div class="why-tag reveal-left" data-reveal>
+            <span>WHY</span>
+            <span>RIF?</span>
+          </div>
+          <div class="why-text reveal-right" data-reveal="late">
+            <p>We partner with entrepreneurs tackling complex, capital-heavy challenges through hard-tech innovation. For us, every investment is a commitment: to the people behind it, to the sustainable impact they aim for, and to the values that guide their journey.</p>
+            <p>Because real change is resilient, scalable, and aligned with the world we want to shape.</p>
+          </div>
+        </div>
+      </div>
+      <h2 class="support-title reveal" data-reveal>
+        We support those who build the future – <span>literally</span>.
+      </h2>
+    </div>
+  </section><br><br>
+
+  <!-- Banda con imagen + tarjetas encima -->
+  <section class="section container">
+    <div class="feature-band">
+      <div class="backdrop">
+        <img src="img/fondos/about.jpeg" alt="City background">
+      </div>
+      <div class="cards over">
+        <article class="card appear">
+          <i>$</i>
+          <h3>STRATEGIC FUNDING FOR CAPITAL-INTENSIVE STARTUPS</h3>
+          <p>Our ‘Financing 4 Equity’ philosophy provides tailored financial solutions that help startups accelerate growth during the most critical phases.</p>
+        </article>
+        <article class="card appear-delay">
+          <i>🎓</i>
+          <h3>PIONEERING IN CLIMATE-TECH SINCE 2009</h3>
+          <p>70+ years of combined experience in Energy Transition, creating innovative investment vehicles and financial solutions.</p>
+        </article>
+        <article class="card appear-delay">
+          <i>💎</i>
+          <h3>REDUCE THE EXPOSURE FOR INVESTORS</h3>
+          <p>A balanced risk management strategy to access high-growth opportunities with greater confidence and less volatility.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos -->
+  <section class="closing">
+    <p class="tagline footer-note">WE ARE PROUD TO PARTNER WITH:</p>
+    <div class="closing-logos five">
+      <a href="https://www.aqvc.com/" target="_blank" rel="noopener"><img src="img/aqvc.jpg" alt="AQVC"></a>
+      <a href="https://www.sefaeu.org/" target="_blank" rel="noopener"><img src="img/sefa.jpg" alt="SEFA"></a>
+      <a href="https://energyshift.forum/" target="_blank" rel="noopener"><img src="img/energy.jpg" alt="ENERGY SHIFT FORUM"></a>
+      <a href="https://www.cleantechforiberia.com/" target="_blank" rel="noopener"><img src="img/iberia.jpg" alt="CLEANTECH FOR IBERIA"></a>
+      <a href="https://www.norrsken.org/" target="_blank" rel="noopener"><img src="img/norsken.jpeg" alt="NORRSKEN"></a>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <div style="font-size:0.85rem; font-style:italic; text-align:center; color:#cfd6df; margin:20px auto 10px; max-width:1000px; line-height:1.5;">
+    This is not an offer to sell or solicitation to buy securities. For professional investors only.
+    Investments in FCREs are illiquid and involve risk, including loss of capital. Please refer to the fund documents.
+  </div>
+  <footer><div class="container">© 2025 Resilient Infratech Fund. All rights reserved.</div></footer>
+
+  <!-- Navbar + animaciones -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header    = document.querySelector('.site-nav');
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks  = document.getElementById('mainNavLinks');
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          const open = navLinks.classList.toggle('open');
+          navToggle.classList.toggle('open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 1024) {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded','false');
+          }
+        });
+        navLinks.querySelectorAll('a').forEach(a =>
+          a.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded','false');
+          })
+        );
+      }
+
+      let navHovering = false;
+      const onScroll = () => {
+        if (window.scrollY > 10) header.classList.add('scrolled');
+        else if (!navHovering) header.classList.remove('scrolled');
+      };
+      onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+      header.addEventListener('mouseenter', () => { navHovering = true;  header.classList.add('scrolled'); });
+      header.addEventListener('mouseleave', () => { navHovering = false; if (window.scrollY <= 10) header.classList.remove('scrolled'); });
+
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReduced && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target);} });
+        }, { threshold: 0.28 });
+        document.querySelectorAll('[data-reveal], .appear, .appear-delay').forEach(el => io.observe(el));
+      } else {
+        document.querySelectorAll('[data-reveal], .appear, .appear-delay').forEach(el => el.classList.add('in'));
+      }
+    });
+  </script>
+</body>
+</html>
