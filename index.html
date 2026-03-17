@@ -7,49 +7,75 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Poppins (fuente oficial) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="preload" as="video" href="video/video-home.mp4" type="video/mp4">
   <link rel="stylesheet" href="style.css"/>
+  
 </head>
 <body class="home">
+  <!-- Grid fade overlay: intense at top, fades out downward -->
+  <div class="grid-vignette" aria-hidden="true"></div>
 
-<header class="site-nav transparent">
-  <div class="container">
-    <div class="bar">
-      <a class="brand" href="index.html"><img src="img/logo-negro.png" alt="RIF logo"></a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span class="line"></span><span class="line"></span><span class="line"></span>
-      </button>
-      <nav class="links" id="mainNavLinks">
-        <a href="index.html">Home</a>
-        <a href="about.html">About us</a>
-        <a href="investments.html">Investments</a>
-        <a href="infratech-triangle.html">The Infratech Triangle</a>
-        <a class="cta" href="contact.html">Get in Touch</a>
-      </nav>
+  <!-- NAV -->
+  <header class="site-nav transparent">
+    <div class="container">
+      <div class="bar">
+        <a class="brand" href="index.html"><img src="img/logo-negro.png" alt="RIF logo"></a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span class="line"></span><span class="line"></span><span class="line"></span>
+        </button>
+        <nav class="links">
+          <a href="index.html">Home</a>
+          <a href="infratech-triangle.html">The Infratech Triangle</a>
+          <a href="strat.html">Strategy</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="team.html">Team</a>
+          <a class="cta" href="contact.html">Reach Out</a>
+        </nav>
+      </div>
     </div>
-  </div>
-</header>
-
+  </header>
 
   <!-- INTRO -->
   <section class="intro">
     <div class="media">
       <video class="hero-video" autoplay muted loop playsinline preload="auto">
         <source src="video/video-home.mp4" type="video/mp4">
+        Tu navegador no soporta video HTML5.
       </video>
     </div>
 
     <div class="hero-copy reveal" data-reveal>
       <div class="bar"></div>
       <div class="lines">
-        <span class="line1">THINK LIKE AN INFRA</span>
-        <span class="line2">ACT LIKE A VC</span>
+        <span class="line1">BACKING THE DIGITAL TRANSFORMATION</span>
+        <span class="line2">OF GLOBAL INFRASTRUCTURE</span>
       </div>
     </div>
   </section>
 
-  <!-- WHY RIF -->
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-label">Focus</span>
+      <span class="stat-value">Infratech</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label">Stage</span>
+      <span class="stat-value">Series A</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label">Ticket</span>
+      <span class="stat-value">€3 – 5M</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label">Geography</span>
+      <span class="stat-value">Europe</span>
+    </div>
+  </div>
+
+  <!-- WHY RIF NUEVO -->
   <section class="section">
     <div class="container">
       <div class="why-band">
@@ -58,12 +84,14 @@
             <span>WHY</span>
             <span>RIF?</span>
           </div>
+
           <div class="why-text reveal-right" data-reveal="late">
             <p>We partner with entrepreneurs tackling complex, capital-heavy challenges through hard-tech innovation. For us, every investment is a commitment: to the people behind it, to the sustainable impact they aim for, and to the values that guide their journey.</p>
             <p>Because real change is resilient, scalable, and aligned with the world we want to shape.</p>
           </div>
         </div>
       </div>
+
       <h2 class="support-title reveal" data-reveal>
         We support those who build the future – <span>literally</span>.
       </h2>
@@ -73,24 +101,21 @@
   <!-- Banda con imagen + tarjetas encima -->
   <section class="section container">
     <div class="feature-band">
-      <div class="backdrop">
-        <img src="img/fondos/about.jpeg" alt="City background">
-      </div>
-      <div class="cards over">
+      <div class="cards">
         <article class="card appear">
           <i>$</i>
-          <h3>STRATEGIC FUNDING FOR CAPITAL-INTENSIVE STARTUPS</h3>
-          <p>Our ‘Financing 4 Equity’ philosophy provides tailored financial solutions that help startups accelerate growth during the most critical phases.</p>
+          <h3>FLEXIBLE CAPITAL FOR INFRATECH STARTUPS</h3>
+          <p>Infrastructure startups require capital structures different from traditional venture capital. Our Financing-for-Equity model combines venture investment with structured capital to accelerate growth.</p>
         </article>
         <article class="card appear-delay">
           <i>🎓</i>
-          <h3>PIONEERING IN CLIMATE-TECH SINCE 2009</h3>
-          <p>70+ years of combined experience in Energy Transition, creating innovative investment vehicles and financial solutions.</p>
+          <h3>DEEP EXPERIENCE IN DIGITAL INFRASTRUCTURE</h3>
+          <p>Our team brings decades of experience across energy transition, climate finance, and infrastructure investment.</p>
         </article>
         <article class="card appear-delay">
           <i>💎</i>
-          <h3>REDUCE THE EXPOSURE FOR INVESTORS</h3>
-          <p>A balanced risk management strategy to access high-growth opportunities with greater confidence and less volatility.</p>
+          <h3>INFRASTRUCTURE-DRIVEN VENTURE STRATEGY</h3>
+          <p>By investing in technologies embedded in real infrastructure systems, we target scalable growth with structural demand.</p>
         </article>
       </div>
     </div>
@@ -108,61 +133,412 @@
     </div>
   </section>
 
-  <!-- Disclaimer -->
+  <!-- GET IN TOUCH CTA -->
+  <section class="home-cta-section">
+    <div class="container">
+      <div class="home-cta-inner reveal" data-reveal>
+        <span class="eyebrow">Get in Touch</span>
+        <h2 class="home-cta-title">Ready to Build Something <span>Resilient</span>?</h2>
+        <p class="home-cta-desc">We are currently open to qualified institutional investors and entrepreneurs building at the intersection of infrastructure and technology. If that sounds like you, let's talk.</p>
+        <div class="home-cta-actions">
+          <button class="btn-cta-primary" id="openContactModal">For Investors</button>
+          <button class="btn-cta-outline" id="openContactModalFounders">For Founders</button>
+        </div>
+        <p class="home-cta-note">For qualified investors only. All communications are strictly confidential.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button class="modal-close" id="closeContactModal" aria-label="Close">&times;</button>
+      <h3 id="modalTitle">Get in Touch</h3>
+      <p class="modal-sub">Fill in your details and we'll get back to you shortly.</p>
+      <form class="modal-form" action="https://formspree.io/f/xvgqvrwq" method="POST">
+        <input type="hidden" name="_subject" id="modalSubject" value="Enquiry — RIF Website">
+        <input type="hidden" name="_to" value="bg@rif.ventures">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <input class="form-input" type="text" name="name" placeholder="Full Name *" required>
+          <input class="form-input" type="email" name="_replyto" placeholder="Email Address *" required>
+        </div>
+        <div class="form-row">
+          <input class="form-input" type="text" name="company" placeholder="Company Name *" required>
+          <input class="form-input" type="text" name="location" placeholder="City / Country *" required>
+        </div>
+        <textarea class="form-input" name="message" rows="4" placeholder="Your message or question…"></textarea>
+        <button class="form-submit" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+   <!-- Disclaimer en cursiva y pequeño -->
   <div style="font-size:0.85rem; font-style:italic; text-align:center; color:#cfd6df; margin:20px auto 10px; max-width:1000px; line-height:1.5;">
     This is not an offer to sell or solicitation to buy securities. For professional investors only.
     Investments in FCREs are illiquid and involve risk, including loss of capital. Please refer to the fund documents.
   </div>
-  <footer><div class="container">© 2025 Resilient Infratech Fund. All rights reserved.</div></footer>
+<footer class="site-footer">
+  <div class="footer-wrapper">
 
-  <!-- Navbar + animaciones -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const header    = document.querySelector('.site-nav');
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks  = document.getElementById('mainNavLinks');
+    <div class="footer-brand">
+      <p class="footer-company">
+        Resilient InfraTech Ventures FCRE, S.A
+      </p>
+    </div>
 
-      if (navToggle && navLinks) {
-        navToggle.addEventListener('click', () => {
-          const open = navLinks.classList.toggle('open');
-          navToggle.classList.toggle('open', open);
-          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-        window.addEventListener('resize', () => {
-          if (window.innerWidth >= 1024) {
-            navLinks.classList.remove('open');
-            navToggle.classList.remove('open');
-            navToggle.setAttribute('aria-expanded','false');
-          }
-        });
-        navLinks.querySelectorAll('a').forEach(a =>
-          a.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            navToggle.classList.remove('open');
-            navToggle.setAttribute('aria-expanded','false');
-          })
-        );
-      }
+    <div class="footer-legal">
+      <p><strong>Legal</strong></p>
+      <ul>
+        <li>
+          <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>
+        </li>
+        <li>
+          <a href="cookie.html" target="_blank" rel="noopener">Cookie Policy</a>
+        </li>
+      </ul>
+    </div>
 
-      let navHovering = false;
-      const onScroll = () => {
-        if (window.scrollY > 10) header.classList.add('scrolled');
-        else if (!navHovering) header.classList.remove('scrolled');
-      };
-      onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
-      header.addEventListener('mouseenter', () => { navHovering = true;  header.classList.add('scrolled'); });
-      header.addEventListener('mouseleave', () => { navHovering = false; if (window.scrollY <= 10) header.classList.remove('scrolled'); });
+  </div>
 
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!prefersReduced && 'IntersectionObserver' in window) {
-        const io = new IntersectionObserver(entries => {
-          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target);} });
-        }, { threshold: 0.28 });
-        document.querySelectorAll('[data-reveal], .appear, .appear-delay').forEach(el => io.observe(el));
-      } else {
-        document.querySelectorAll('[data-reveal], .appear, .appear-delay').forEach(el => el.classList.add('in'));
+  <div class="footer-bottom">
+    <p>© 2026 Resilient InfraTech Ventures FCRE, S.A. All rights reserved.</p>
+  </div>
+</footer>
+
+
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* =========================
+     1) TU SCRIPT ORIGINAL (sin cambios)
+     ========================= */
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks  = document.querySelector('.site-nav .links');
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded','false');
       }
     });
-  </script>
+
+    navLinks.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded','false');
+      })
+    );
+  }
+
+  const header = document.querySelector('.site-nav');
+  const onScrollHeader = () => {
+    if (window.scrollY > 10) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScrollHeader, { passive: true });
+  onScrollHeader();
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReduced && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+    }, { threshold: 0.28 });
+    document.querySelectorAll('[data-reveal], .appear, .appear-delay').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('[data-reveal], .appear, .appear-delay').forEach(el => el.classList.add('in'));
+  }
+
+  const whyText = document.querySelector('.why-text');
+  if (whyText) {
+    whyText.classList.remove('in');
+    const checkWhy = () => {
+      const rect = whyText.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const overlap = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
+      const visibleRatio = overlap / Math.min(vh, rect.height);
+      if (visibleRatio >= 0.55) {
+        whyText.classList.add('in');
+        window.removeEventListener('scroll', onCheck, { passive: true });
+        window.removeEventListener('resize', onCheck);
+      }
+    };
+    const onCheck = () => requestAnimationFrame(checkWhy);
+    window.addEventListener('scroll', onCheck, { passive: true });
+    window.addEventListener('resize', onCheck);
+    checkWhy();
+  }
+
+  /* =========================
+     2) LOGICA MÓVIL SEGURA (NO altera tu hero / CSS)
+     ========================= */
+
+  // Config
+  const BREAKPOINT = 820;
+  const headerEl = document.querySelector('.site-nav');
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.site-nav .links');
+
+  if (!headerEl || !toggle || !links) {
+    return; // no hay elementos, no inicializamos la parte móvil
+  }
+
+  // Create overlay if missing. We handle overlay visuals inline here only.
+  let overlay = document.querySelector('.mobile-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'mobile-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+    // default hidden styles so it doesn't affect the hero at load:
+    overlay.style.position = 'fixed';
+    overlay.style.inset = '0';
+    overlay.style.background = 'rgba(0,0,0,0)'; // transparent initially
+    overlay.style.pointerEvents = 'none';
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity .28s ease, background .28s ease';
+    overlay.style.zIndex = '1200';
+    document.body.appendChild(overlay);
+  } else {
+    // ensure it's hidden initially
+    overlay.style.pointerEvents = 'none';
+    overlay.style.opacity = '0';
+    overlay.style.background = 'rgba(0,0,0,0)';
+  }
+
+  const isMobile = () => window.innerWidth <= BREAKPOINT;
+
+  // Ensure toggle visible on mobile (minimal inline; doesn't affect hero)
+  function ensureToggleVisible() {
+    try {
+      const cs = window.getComputedStyle(toggle);
+      if (isMobile() && (cs.display === 'none' || cs.opacity === '0' || cs.visibility === 'hidden')) {
+        toggle.style.display = 'inline-flex';
+        toggle.style.zIndex = '2000';
+        toggle.style.opacity = '1';
+        toggle.style.pointerEvents = 'auto';
+      } else {
+        toggle.style.removeProperty('display');
+        toggle.style.removeProperty('z-index');
+        toggle.style.removeProperty('opacity');
+        toggle.style.removeProperty('pointer-events');
+      }
+    } catch (err) {
+      // ignore
+    }
+  }
+
+  // Show / hide overlay (only overlay inline styles changed)
+  function showOverlay() {
+    overlay.style.background = 'rgba(0,0,0,0.45)';
+    overlay.style.opacity = '1';
+    overlay.style.pointerEvents = 'auto';
+    overlay.setAttribute('aria-hidden','false');
+  }
+  function hideOverlay() {
+    overlay.style.opacity = '0';
+    overlay.style.pointerEvents = 'none';
+    // keep background transparent to avoid covering hero during transitions
+    overlay.style.background = 'rgba(0,0,0,0)';
+    overlay.setAttribute('aria-hidden','true');
+  }
+
+  // When menu state changes (original handler toggles .links.open), reflect overlay
+  // We attach a listener to toggle that runs AFTER your original click handler (using rAF)
+  toggle.addEventListener('click', () => {
+    // do this in next frame so original listener toggled .open first
+    requestAnimationFrame(() => {
+      const open = links.classList.contains('open');
+      if (open) {
+        // prevent body scroll
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+        showOverlay();
+      } else {
+        hideOverlay();
+        document.documentElement.style.removeProperty('overflow');
+        document.body.style.removeProperty('overflow');
+      }
+    });
+  });
+
+  // Close by clicking overlay
+  overlay.addEventListener('click', () => {
+    // remove open class from links and toggle to close visually (this uses your CSS)
+    links.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+    hideOverlay();
+    document.documentElement.style.removeProperty('overflow');
+    document.body.style.removeProperty('overflow');
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && links.classList.contains('open')) {
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      hideOverlay();
+      document.documentElement.style.removeProperty('overflow');
+      document.body.style.removeProperty('overflow');
+    }
+  });
+
+  // Robust link handling: preventDefault so other scripts can't block navigation,
+  // close menu, then navigate with location.assign(...).
+  links.querySelectorAll('a').forEach(link => {
+    if (link.__rifHandled) return;
+    link.__rifHandled = true;
+
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href') || '';
+      const target = (link.getAttribute('target') || '').toLowerCase();
+
+      // Anchors (#id) -> scroll in-page
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        // close menu visually
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+        hideOverlay();
+        setTimeout(() => {
+          const id = href.slice(1);
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 180);
+        return;
+      }
+
+      // mailto / tel -> close menu and let browser handle
+      if (href.startsWith('mailto:') || href.startsWith('tel:')) {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+        hideOverlay();
+        return;
+      }
+
+      // External/blank targets -> close menu and allow default
+      try {
+        const resolved = new URL(href, window.location.href);
+        if (target === '_blank' || resolved.origin !== window.location.origin) {
+          links.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+          hideOverlay();
+          return; // let default happen
+        }
+      } catch (err) {
+        // if parse fails, treat as internal relative
+      }
+
+      // Internal navigation: prevent default, close menu, then force navigation
+      if (!href || href.indexOf('javascript:') === 0) {
+        // nothing to navigate
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+        hideOverlay();
+        return;
+      }
+
+      // Prevent default so other scripts cannot block it
+      e.preventDefault();
+
+      // close
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      hideOverlay();
+      document.documentElement.style.removeProperty('overflow');
+      document.body.style.removeProperty('overflow');
+
+      // small delay to allow close animation
+      setTimeout(() => {
+        try {
+          const finalUrl = new URL(href, window.location.href).href;
+          if (finalUrl !== window.location.href) window.location.assign(finalUrl);
+          else window.location.reload();
+        } catch (err) {
+          window.location.assign(href);
+        }
+      }, 150);
+    });
+  });
+
+  // resize handler
+  window.addEventListener('resize', () => {
+    ensureToggleVisible();
+    if (window.innerWidth > BREAKPOINT) {
+      // ensure overlay removed when switching to desktop
+      hideOverlay();
+      document.documentElement.style.removeProperty('overflow');
+      document.body.style.removeProperty('overflow');
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+
+  // init states
+  ensureToggleVisible();
+  hideOverlay();
+
+  /* =========================
+     3) CONTACT MODAL
+     ========================= */
+  const contactModal    = document.getElementById('contactModal');
+  const closeModalBtn   = document.getElementById('closeContactModal');
+  const modalTitle      = document.getElementById('modalTitle');
+  const modalSubject    = document.getElementById('modalSubject');
+
+  function openModal(type) {
+    if (type === 'founders') {
+      modalTitle.textContent   = 'For Founders';
+      modalSubject.value       = 'Founder Enquiry — RIF Website';
+    } else {
+      modalTitle.textContent   = 'For Investors';
+      modalSubject.value       = 'Investor Enquiry — RIF Website';
+    }
+    contactModal.classList.add('active');
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    closeModalBtn.focus();
+  }
+  function closeModal() {
+    contactModal.classList.remove('active');
+    document.documentElement.style.removeProperty('overflow');
+    document.body.style.removeProperty('overflow');
+  }
+
+  const openInvestors = document.getElementById('openContactModal');
+  const openFounders  = document.getElementById('openContactModalFounders');
+  if (openInvestors) openInvestors.addEventListener('click', () => openModal('investors'));
+  if (openFounders)  openFounders.addEventListener('click',  () => openModal('founders'));
+  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+  if (contactModal) {
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) closeModal();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && contactModal && contactModal.classList.contains('active')) closeModal();
+  });
+});
+</script>
+
+
 </body>
 </html>

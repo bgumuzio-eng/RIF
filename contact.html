@@ -9,9 +9,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
 </head>
+<style>
+  /* Ajustes específicos de contact.html */
+  .contact-page-wrap {
+    min-height: calc(100vh - var(--nav-h) - 200px);
+    display: flex;
+    align-items: center;
+  }
+</style>
 <body>
 
-  <!-- NAV -->
+  <!-- NAV  -->
   <header class="site-nav">
     <div class="container">
       <div class="bar">
@@ -19,67 +27,59 @@
         <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
           <span class="line"></span><span class="line"></span><span class="line"></span>
         </button>
-        <nav class="links" id="mainNavLinks">
+        <nav class="links">
           <a href="index.html">Home</a>
-          <a href="about.html">About us</a>
-          <a href="investments.html">Investments</a>
           <a href="infratech-triangle.html">The Infratech Triangle</a>
-          <a class="cta" href="contact.html">Get in Touch</a>
+          <a href="strat.html">Strategy</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="team.html">Team</a>
+          <a class="cta" href="contact.html">Reach Out</a>
         </nav>
       </div>
     </div>
   </header>
 
-  <!-- CONTACT -->
-  <main class="container section contact-wrap">
-    <form action="https://formspree.io/f/xovnvjle" method="POST" class="contact-card contact-animate" novalidate>
-      <h1 class="contact-title">Get in Touch</h1>
-      <hr class="section-rule">
-
-      <div class="cg anim">
-        <label for="name">Full Name</label>
-        <input id="name" name="name" type="text" required
-               placeholder="John Doe"
-               pattern="[A-Za-zÀ-ÿ\s]{3,}"
-               title="Only letters and spaces, min 3 characters">
+  <!-- REACH OUT -->
+  <main class="contact-page-wrap">
+    <section class="home-cta-section" style="width:100%;">
+      <div class="container">
+        <div class="home-cta-inner">
+          <span class="eyebrow">Get in Touch</span>
+          <h1 class="home-cta-title">Ready to Build Something <span>Resilient</span>?</h1>
+          <p class="home-cta-desc">We are currently open to qualified institutional investors and entrepreneurs building at the intersection of infrastructure and technology. If that sounds like you, let's talk.</p>
+          <div class="home-cta-actions">
+            <button class="btn-cta-primary" id="openContactModal">For Investors</button>
+            <button class="btn-cta-outline" id="openContactModalFounders">For Founders</button>
+          </div>
+          <p class="home-cta-note">For qualified investors only. All communications are strictly confidential.</p>
+        </div>
       </div>
-
-      <div class="cg anim">
-        <label for="phone">Phone Number</label>
-        <input id="phone" name="phone" type="tel" required
-               placeholder="+34 600 000 000"
-               pattern="[0-9+\-\s]{6,}"
-               title="Digits, spaces, + or - (min 6)">
-      </div>
-
-      <div class="cg anim">
-        <label for="location">City / Country</label>
-        <input id="location" name="location" type="text" required
-               placeholder="City, Country"
-               pattern="[A-Za-zÀ-ÿ\s,]{2,}"
-               title="Letters and comma only (e.g. Melilla, Spain)">
-      </div>
-
-      <div class="cg anim">
-        <label for="email">Email Address</label>
-        <input id="email" name="_replyto" type="email" required
-               placeholder="you@example.com"
-               pattern="^[a-zA-Z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,24}$"
-               title="Use a real-looking email like you@example.com">
-      </div>
-
-      <div class="cg anim">
-        <label for="message">Message (optional)</label>
-        <textarea id="message" name="message" rows="4" placeholder="Tell us anything we should know…"></textarea>
-      </div>
-
-      <!-- Anti-spam -->
-      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
-      <input type="hidden" name="_subject" value="New lead — RIF Contact Form">
-
-      <button type="submit" class="contact-btn anim">Send</button>
-    </form>
+    </section>
   </main>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button class="modal-close" id="closeContactModal" aria-label="Close">&times;</button>
+      <h3 id="modalTitle">Get in Touch</h3>
+      <p class="modal-sub">Fill in your details and we'll get back to you shortly.</p>
+      <form class="modal-form" action="https://formspree.io/f/xvgqvrwq" method="POST">
+        <input type="hidden" name="_subject" id="modalSubject" value="Enquiry — RIF Website">
+        <input type="hidden" name="_to" value="bg@rif.ventures">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <input class="form-input" type="text" name="name" placeholder="Full Name *" required>
+          <input class="form-input" type="email" name="_replyto" placeholder="Email Address *" required>
+        </div>
+        <div class="form-row">
+          <input class="form-input" type="text" name="company" placeholder="Company Name *" required>
+          <input class="form-input" type="text" name="location" placeholder="City / Country *" required>
+        </div>
+        <textarea class="form-input" name="message" rows="4" placeholder="Your message or question…"></textarea>
+        <button class="form-submit" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
 
  <!-- Disclaimer en cursiva y pequeño -->
   <div style="font-size:0.85rem; font-style:italic; text-align:center; color:#cfd6df; margin:20px auto 10px; max-width:1000px; line-height:1.5;">
@@ -87,68 +87,253 @@
     Investments in FCREs are illiquid and involve risk, including loss of capital. Please refer to the fund documents.
   </div>
 
-  <footer>
-    © 2025 Resilient Infratech Fund. All rights reserved.
-  </footer>
+ <footer class="site-footer">
+  <div class="footer-wrapper">
+
+    <div class="footer-brand">
+      <p class="footer-company">
+        Resilient InfraTech Ventures FCRE, S.A
+      </p>
+    </div>
+
+    <div class="footer-legal">
+      <p><strong>Legal</strong></p>
+      <ul>
+        <li>
+          <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>
+        </li>
+        <li>
+          <a href="cookie.html" target="_blank" rel="noopener">Cookie Policy</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Resilient InfraTech Ventures FCRE, S.A. All rights reserved.</p>
+  </div>
+</footer>
+
 
   <!-- JS menú móvil + sticky nav -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const header    = document.querySelector('.site-nav');
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks  = document.getElementById('mainNavLinks');
+(function(){
+  if (window.__rif_nav_loaded) return;
+  window.__rif_nav_loaded = true;
 
-      if (navToggle && navLinks) {
-        navToggle.addEventListener('click', () => {
-          const open = navLinks.classList.toggle('open');
-          navToggle.classList.toggle('open', open);
-          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-        window.addEventListener('resize', () => {
-          if (window.innerWidth >= 1024) {
-            navLinks.classList.remove('open');
-            navToggle.classList.remove('open');
-            navToggle.setAttribute('aria-expanded','false');
-          }
-        });
-        navLinks.querySelectorAll('a').forEach(a =>
-          a.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            navToggle.classList.remove('open');
-            navToggle.setAttribute('aria-expanded','false');
-          })
-        );
-      }
+  document.addEventListener('DOMContentLoaded', () => {
+    const BREAKPOINT = 820;
+    const header = document.querySelector('.site-nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.site-nav .links');
 
-      // Añade clase .scrolled para sombra en nav (igual que index/about)
-      const onScroll = () => {
-        if(window.scrollY > 10){ header.classList.add('scrolled'); }
-        else { header.classList.remove('scrolled'); }
-      };
-      onScroll();
-      window.addEventListener('scroll', onScroll);
+    if (!header || !navToggle || !navLinks) return;
 
-      // animaciones
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!prefersReduced && 'IntersectionObserver' in window) {
-        const io = new IntersectionObserver(entries => {
-          entries.forEach(e => {
-            if (e.isIntersecting) {
-              e.target.classList.add('in');
-              io.unobserve(e.target);
-            }
-          });
-        }, { threshold: 0.25 });
+    // crear overlay si no existe
+    let overlay = document.querySelector('.mobile-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'mobile-overlay';
+      overlay.setAttribute('aria-hidden','true');
+      document.body.appendChild(overlay);
+    }
 
-        document
-          .querySelectorAll('[data-reveal], .appear, .appear-delay, .contact-animate, .anim')
-          .forEach(el => io.observe(el));
+    // estilos inline mínimos seguros
+    overlay.style.position = overlay.style.position || 'fixed';
+    overlay.style.inset = overlay.style.inset || '0';
+    overlay.style.zIndex = overlay.style.zIndex || '2040';
+    overlay.style.opacity = overlay.style.opacity || '0';
+    overlay.style.pointerEvents = overlay.style.pointerEvents || 'none';
+    overlay.style.transition = overlay.style.transition || 'opacity .28s ease';
+    overlay.style.background = overlay.style.background || 'rgba(0,0,0,0)';
+
+    const originalNavLinksZ = window.getComputedStyle(navLinks).zIndex || null;
+
+    const isMobile = () => window.innerWidth <= BREAKPOINT;
+
+    function showOverlay(){ 
+      overlay.style.background='rgba(0,0,0,0.45)'; 
+      overlay.style.opacity='1'; 
+      overlay.style.pointerEvents='auto'; 
+      overlay.setAttribute('aria-hidden','false'); 
+    }
+    function hideOverlay(){ 
+      overlay.style.background='rgba(0,0,0,0)'; 
+      overlay.style.opacity='0'; 
+      overlay.style.pointerEvents='none'; 
+      overlay.setAttribute('aria-hidden','true'); 
+    }
+
+    function ensureToggleVisible() {
+      try {
+        const cs = window.getComputedStyle(navToggle);
+        if (isMobile() && (cs.display === 'none' || cs.opacity === '0' || cs.visibility === 'hidden')) {
+          navToggle.style.setProperty('display','inline-flex','important');
+          navToggle.style.setProperty('z-index','5100','important');
+        } else {
+          navToggle.style.removeProperty('display');
+          navToggle.style.removeProperty('z-index');
+        }
+      } catch(e){}
+    }
+    ensureToggleVisible();
+
+    // ensure panel is above overlay when opened
+    function raisePanel() {
+      navLinks.style.zIndex = '2060';
+      // also ensure header sits above
+      header.style.zIndex = header.style.zIndex || '2050';
+    }
+    function restorePanelZ() {
+      if (originalNavLinksZ) {
+        navLinks.style.zIndex = originalNavLinksZ;
       } else {
-        document
-          .querySelectorAll('[data-reveal], .appear, .appear-delay, .contact-animate, .anim')
-          .forEach(el => el.classList.add('in'));
+        navLinks.style.removeProperty('z-index');
+      }
+    }
+
+    // toggle
+    navToggle.addEventListener('click', () => {
+      if (!isMobile()) return;
+      const opened = navLinks.classList.toggle('open');
+      overlay.classList.toggle('show', opened);
+      navToggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+      if (opened) {
+        // force panel above overlay
+        raisePanel();
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+        showOverlay();
+      } else {
+        restorePanelZ();
+        document.documentElement.style.removeProperty('overflow');
+        document.body.style.removeProperty('overflow');
+        hideOverlay();
       }
     });
-  </script>
+
+    // cerrar al click en overlay
+    overlay.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded','false');
+      restorePanelZ();
+      hideOverlay();
+      document.documentElement.style.removeProperty('overflow');
+      document.body.style.removeProperty('overflow');
+    });
+
+    // ESC cierra
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+        restorePanelZ();
+        hideOverlay();
+        document.documentElement.style.removeProperty('overflow');
+        document.body.style.removeProperty('overflow');
+      }
+    });
+
+    // cerrar al pulsar cualquier enlace (deja que el navegador haga la navegación)
+    navLinks.querySelectorAll('a').forEach(a => {
+      if (a.__rif_handled) return;
+      a.__rif_handled = true;
+      a.addEventListener('click', () => {
+        // cerramos el panel inmediatamente para que la navegación sea clara
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+        restorePanelZ();
+        hideOverlay();
+        navToggle.setAttribute('aria-expanded','false');
+        document.documentElement.style.removeProperty('overflow');
+        document.body.style.removeProperty('overflow');
+      });
+    });
+
+    // resize
+    window.addEventListener('resize', () => {
+      ensureToggleVisible();
+      if (!isMobile()) {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+        restorePanelZ();
+        hideOverlay();
+        document.documentElement.style.removeProperty('overflow');
+        document.body.style.removeProperty('overflow');
+      }
+    });
+
+    // Modal
+    const contactModal  = document.getElementById('contactModal');
+    const closeModalBtn = document.getElementById('closeContactModal');
+    const modalTitle    = document.getElementById('modalTitle');
+    const modalSubject  = document.getElementById('modalSubject');
+    function openModal(type) {
+      if (type === 'founders') {
+        modalTitle.textContent = 'For Founders';
+        modalSubject.value     = 'Founder Enquiry — RIF Website';
+      } else {
+        modalTitle.textContent = 'For Investors';
+        modalSubject.value     = 'Investor Enquiry — RIF Website';
+      }
+      contactModal.classList.add('active');
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+      closeModalBtn.focus();
+    }
+    function closeModal() {
+      contactModal.classList.remove('active');
+      document.documentElement.style.removeProperty('overflow');
+      document.body.style.removeProperty('overflow');
+    }
+    const openInvestors = document.getElementById('openContactModal');
+    const openFounders  = document.getElementById('openContactModalFounders');
+    if (openInvestors) openInvestors.addEventListener('click', () => openModal('investors'));
+    if (openFounders)  openFounders.addEventListener('click',  () => openModal('founders'));
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (contactModal) {
+      contactModal.addEventListener('click', (e) => { if (e.target === contactModal) closeModal(); });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && contactModal && contactModal.classList.contains('active')) closeModal();
+    });
+
+    // MutationObserver para evitar que otro script/CSS lo oculte
+    const mo = new MutationObserver(() => {
+      if (isMobile()) {
+        const comp = window.getComputedStyle(navToggle);
+        if (comp && comp.display === 'none') {
+          navToggle.style.setProperty('display','inline-flex','important');
+        }
+      }
+    });
+    mo.observe(navToggle, { attributes: true, attributeFilter: ['style', 'class'] });
+
+    // scrolled header + reveals (mantengo comportamiento)
+    const onScrollHeader = () => {
+      if (window.scrollY > 10) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScrollHeader, { passive: true });
+    onScrollHeader();
+
+    const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .anim, .contact-animate, .why-text, .appear, .appear-delay');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+      }, { threshold: 0.15 });
+      els.forEach(el => io.observe(el));
+    } else {
+      els.forEach(el => el.classList.add('in'));
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

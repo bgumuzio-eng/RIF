@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Briera Dale — Resilient Infratech Fund</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    /* Usamos las variables definidas en team.html para consistencia */
+    :root {
+      --rif-bg: #071c42;
+      --rif-primary: #00bfff;
+      --rif-ink: #0b1b35;
+      --rif-radius: 12px;
+    }
+
+    /* Ajustes para el Hero de las páginas de perfil */
+    .profile-hero {
+      background: var(--rif-bg);
+      color: #fff;
+      padding-top: 140px; /* Ajuste para el nav sticky */
+      padding-bottom: 60px;
+      min-height: 80vh; /* Ocupa buena parte de la pantalla */
+    }
+
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr; /* Columna de foto y columna de texto */
+      gap: clamp(30px, 6vw, 80px);
+      align-items: flex-start;
+    }
+
+    .profile-photo-area {
+      position: sticky;
+      top: 100px; /* Se queda fija mientras se hace scroll */
+      
+      /* CENTRADO DEL BOTÓN Y LA FOTO */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centra horizontalmente los ítems (foto y botón) */
+      gap: 20px; /* Espacio entre la foto y el botón */
+    }
+
+    .profile-photo {
+      width: 100%;
+      max-width: 320px; /* Max ancho para foto */
+      aspect-ratio: 1 / 1.3; /* Proporción para fotos verticales */
+      object-fit: cover;
+      border-radius: var(--rif-radius);
+      border: 4px solid var(--rif-primary);
+      box-shadow: 0 10px 40px rgba(0, 191, 255, 0.3); /* Sombra de color primario */
+    }
+    
+    .profile-details h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      margin: 0;
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    .profile-details .role {
+      display: inline-block;
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      color: var(--rif-primary);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      
+      /* --- CÓDIGO AÑADIDO PARA LA LÍNEA --- */
+      border-bottom: 2px solid var(--rif-primary);
+      padding-bottom: 10px; 
+      max-width: 320px; 
+      width: 100%; 
+      /* ----------------------------------- */
+
+      margin: 10px 0 40px; 
+    }
+    
+    .profile-details p {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      line-height: 1.8;
+      color: #cfe3f5;
+      margin: 0 0 20px;
+      max-width: 80ch;
+    }
+    
+    /* Ocultamos las secciones de bio para el formato simple */
+    .bio-section { display: none; }
+
+
+    .profile-link-btn {
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+      background: var(--rif-primary);
+      color: var(--rif-ink);
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 12px 28px;
+      border-radius: 999px;
+      margin-top: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    /* Clase de utilidad para el ancho completo (dentro del max-width del contenedor) */
+    .w-100 { width: 100%; max-width: 320px; }
+
+    .profile-link-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 191, 255, 0.45);
+    }
+
+    /* Responsive para la cuadrícula */
+    @media (max-width: 860px) {
+      .profile-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .profile-photo-area {
+        position: static;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+      .profile-photo {
+        max-width: 100%;
+      }
+      .profile-details h1 {
+        text-align: center;
+      }
+      .profile-details .role {
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .profile-link-btn {
+        max-width: 320px;
+      }
+    }
+/* Definición de la Animación de Desplazamiento */
+    @keyframes fadeInSlide {
+      from {
+        opacity: 0;
+        transform: translateY(20px); /* Empieza 20px más abajo */
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Estilo base para todos los elementos que van a aparecer animados */
+    .animated-item {
+      opacity: 0; /* Oculto por defecto */
+      animation-name: fadeInSlide;
+      animation-duration: 0.8s; /* Duración de la animación */
+      animation-fill-mode: forwards; /* Mantiene el estado final (opacity: 1) */
+      /* El delay se aplicará inline en el HTML para la secuencia */
+    }
+  </style>
+</head>
+<body> 
+ 
+ <header class="site-nav">     <div class="container">
+      <div class="bar">
+        <a class="brand" href="index.html"><img src="img/logo-negro.png" alt="RIF logo"></a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span class="line"></span><span class="line"></span><span class="line"></span>
+        </button>
+        <nav class="links">
+          <a href="index.html">Home</a>
+          <a href="infratech-triangle.html">The Infratech Triangle</a>
+          <a href="strat.html">Strategy</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="team.html">Team</a>
+          <a class="cta" href="contact.html">Reach Out</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+ <section class="profile-hero">
+    <div class="container">
+        <div class="profile-layout">
+            
+            <div class="profile-photo-area">
+                <img class="profile-photo animated-item" 
+                     style="animation-delay: 0.2s;"
+                     src="img/team/Briera Dale.jpg" 
+                     alt="Briera Dale, Head of ESG & Venture Partner">
+                
+                <a class="profile-link-btn animated-item w-100" 
+                   style="animation-delay: 0.4s;"
+                   href="https://www.linkedin.com/in/brieradale/" 
+                   target="_blank" rel="noopener">
+                LinkedIn
+                </a>
+            </div>
+
+            <div class="profile-details">
+                <h1 class="animated-item" style="animation-delay: 0.3s;">Briera Dale</h1>
+                <span class="role animated-item" style="animation-delay: 0.4s;">Head of ESG & Venture Partner</span>
+                
+                <p class="animated-item" style="animation-delay: 0.5s;">
+                    Briera Dale is the <strong>Head of ESG & Venture Partner</strong> at RIF, leading the integration of Environmental, 
+                    Social, and Governance (ESG) criteria across all investment strategies. Her expertise is crucial for driving measurable impact and resilient returns.
+                    <br><br>
+                    Briera's deep background in impact investing includes serving as
+                     the <strong>VP & ESG Lead at GNE Finance</strong> and as <strong>Co-Founder & COO of Uniti Networks</strong>.
+                      She spent <strong>5 years as Head of Agri Investments at ResponsAbility Investments AG</strong>, managing sustainable
+                       investments in the agricultural sector. She also served as a <strong>consultant for 2 years</strong> at institutions like 
+                       <strong>EBRD and Anaxago</strong>. Early in her career,
+                        she was a <strong>Presidential Management Fellow for 3 years</strong> at the <strong>US Agency for International Development (USAID)</strong>.
+                    <br><br>
+                    She holds a <strong>BA in International Relations and an MA in International
+                       Development from Clark University</strong>, and an <strong>MBA from INSEAD</strong>. Her unique blend of development finance, 
+                       operational leadership, and ESG focus ensures RIF’s portfolio aligns with the highest standards of social and environmental stewardship.
+                </p>
+                
+                <div class="bio-section">
+                                    </div>
+            </div>
+        </div>
+      </div>
+  </section>
+
+ <footer class="site-footer">
+  <div class="footer-wrapper">
+
+    <div class="footer-brand">
+      <p class="footer-company">
+        Resilient InfraTech Ventures FCRE, S.A
+      </p>
+    </div>
+
+    <div class="footer-legal">
+      <p><strong>Legal</strong></p>
+      <ul>
+        <li>
+          <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>
+        </li>
+        <li>
+          <a href="cookie.html" target="_blank" rel="noopener">Cookie Policy</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Resilient InfraTech Ventures FCRE, S.A. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script>
+    // JavaScript para el menú de navegación (igual que en otras páginas)
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.site-nav .links');
+    if (navToggle && navLinks){
+      navToggle.addEventListener('click', ()=>{
+        const open = navLinks.classList.toggle('open');
+        navToggle.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+
+    const header = document.querySelector('.site-nav');
+    const onScrollHeader = () => {
+      if (window.scrollY > 10) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScrollHeader, { passive:true });
+    onScrollHeader();
+  </script>
+</body>
+</html>
