@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Strategy — Resilient Infratech Fund</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    body { background-image: none; overflow-x: hidden; }
+
+    /* Nav transparent sobre el hero imagen */
+    header.site-nav.transparent {
+      background: transparent !important;
+      border-bottom-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    /* ══════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════ */
+    .strat-hero {
+      position: relative;
+      height: clamp(520px, 72vh, 820px);
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(48px, 8vh, 90px);
+    }
+    .strat-hero .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 40%;
+      display: block;
+    }
+    /* layered overlay: darken + branded bottom fade */
+    .strat-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg,
+          rgba(7,28,66,0.25)  0%,
+          rgba(7,28,66,0.30) 40%,
+          rgba(7,28,66,0.72) 75%,
+          rgba(7,28,66,1.00) 100%);
+      z-index: 1;
+    }
+    .strat-hero .hero-text {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--space);
+    }
+    .strat-hero .eyebrow {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+    .strat-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin: 0 0 18px;
+      max-width: 20ch;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    .strat-hero p {
+      font-size: clamp(0.98rem, 1.5vw, 1.06rem);
+      color: rgba(255,255,255,0.65);
+      max-width: 54ch;
+      margin: 0;
+      line-height: 1.8;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    /* ══════════════════════════════════════════════
+       WRAPPER + SECTION LABELS
+    ══════════════════════════════════════════════ */
+    .strat-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 var(--space) 100px;
+    }
+    .strat-section {
+      margin-bottom: 80px;
+    }
+    .s-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .s-label span {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .s-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ══════════════════════════════════════════════
+       ABOUT — STRAP + CARDS
+    ══════════════════════════════════════════════ */
+    .about-strap {
+      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      max-width: 82ch;
+      margin: 0 0 48px;
+    }
+    .about-strap strong { color: #fff; font-weight: 800; }
+
+    /* Vision band — rectángulo casi viewport-ancho */
+    .vision-band {
+      background: rgba(0,191,255,0.055);
+      border: 1px solid rgba(0,191,255,0.22);
+      border-radius: 16px;
+      padding: 52px clamp(28px, 4vw, 64px);
+      margin-bottom: 80px;
+      width: calc(100vw - 40px);
+      margin-left: calc(50% - 50vw + 20px);
+    }
+    .vision-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .vision-col {
+      padding: 0 52px;
+      border-right: 1px solid rgba(0,191,255,0.15);
+    }
+    .vision-col:first-child { padding-left: 0; }
+    .vision-col:last-child  { border-right: none; padding-right: 0; }
+    .vision-col .vc-num {
+      display: block;
+      font-size: 0.63rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+    .vision-col h3 {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 0 0 14px;
+      line-height: 1.25;
+    }
+    .vision-col p {
+      font-size: 0.91rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      margin: 0;
+      text-align: justify;
+    }
+    .vision-col p strong { color: rgba(255,255,255,0.85); }
+
+    /* ══════════════════════════════════════════════
+       INVESTMENT FOCUS — SCROLL STICKY
+    ══════════════════════════════════════════════ */
+    .infra-scroll {
+      display: flex;
+      gap: 72px;
+      align-items: flex-start;
+      margin-bottom: 48px;
+    }
+    .infra-labels {
+      position: sticky;
+      top: 100px;
+      flex: 0 0 42%;
+      width: 42%;
+      align-self: flex-start;
+    }
+    .infra-lbl {
+      font-size: clamp(1.85rem, 3.4vw, 3.1rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: rgba(255,255,255,0.13);
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color 0.45s ease;
+    }
+    .infra-lbl:first-child { padding-top: 0; }
+    .infra-lbl:last-child  { border-bottom: none; }
+    .infra-lbl.active      { color: #fff; }
+    .infra-lbl .il-num {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 10px;
+      opacity: 0.4;
+      transition: opacity 0.45s ease;
+    }
+    .infra-lbl.active .il-num { opacity: 1; }
+
+    .infra-panels { flex: 1; }
+    .infra-panel {
+      min-height: 55vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-bottom: 80px;
+    }
+    .infra-panel:last-child { padding-bottom: 0; }
+    .infra-panel .ip-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 28px;
+      display: block;
+      filter: brightness(0.82);
+    }
+    .infra-panel .ip-tag {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin: 0 0 10px;
+    }
+    .infra-panel h3 {
+      font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+      font-weight: 800;
+      color: #fff;
+      margin: 0 0 14px;
+      line-height: 1.3;
+    }
+    .infra-panel .ip-desc {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.85;
+      margin: 0 0 22px;
+      text-align: justify;
+    }
+    .ip-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .ip-bullets li {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .ip-bullets li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 0.72rem;
+    }
+
+    /* Fund parameters bar */
+    .fund-params {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .fp-item {
+      padding: 20px 24px;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+    }
+    .fp-item:last-child { border-right: none; }
+    .fp-label {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .fp-value {
+      display: block;
+      font-size: clamp(0.88rem, 1.3vw, 1rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    /* ══════════════════════════════════════════════
+       STRATEGIC PARTNERS
+    ══════════════════════════════════════════════ */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .partner-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .partner-card:hover {
+      border-color: rgba(0,191,255,0.28);
+      box-shadow: 0 16px 40px rgba(0,191,255,0.07);
+    }
+    .partner-card .p-logo {
+      height: 44px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      object-position: left center;
+      display: block;
+    }
+    .partner-card .p-role {
+      font-size: 0.63rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin: 0 0 8px;
+    }
+    .partner-card .p-desc {
+      font-size: 0.91rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      margin: 0;
+      flex: 1;
+      text-align: justify;
+    }
+    .p-kpis {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      margin-top: 4px;
+    }
+    .p-kpis.three { grid-template-columns: repeat(3, 1fr); }
+    .p-kpis.four  { grid-template-columns: repeat(4, 1fr); }
+    .p-kpi {
+      text-align: center;
+      padding: 0 10px;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .p-kpi:first-child { padding-left: 0; text-align: left; }
+    .p-kpi:last-child  { border-right: none; }
+    .p-kpi .k-val {
+      display: block;
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+    .p-kpi .k-label {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.4;
+    }
+
+    /* ══════════════════════════════════════════════
+       FADE-UP ON SCROLL
+    ══════════════════════════════════════════════ */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-up.in { opacity: 1; transform: none; }
+
+    .about-cards   .fade-up:nth-child(1) { transition-delay: 0.00s; }
+    .about-cards   .fade-up:nth-child(2) { transition-delay: 0.09s; }
+    .about-cards   .fade-up:nth-child(3) { transition-delay: 0.18s; }
+    .focus-grid    .fade-up:nth-child(1) { transition-delay: 0.00s; }
+    .focus-grid    .fade-up:nth-child(2) { transition-delay: 0.07s; }
+    .focus-grid    .fade-up:nth-child(3) { transition-delay: 0.14s; }
+    .focus-grid    .fade-up:nth-child(4) { transition-delay: 0.21s; }
+    .partners-grid .fade-up:nth-child(1) { transition-delay: 0.00s; }
+    .partners-grid .fade-up:nth-child(2) { transition-delay: 0.10s; }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1080px) {
+      .focus-grid  { grid-template-columns: repeat(2, 1fr); }
+      .fund-params { grid-template-columns: repeat(2, 1fr); }
+      .fp-item:nth-child(2) { border-right: none; }
+      .fp-item:nth-child(3),
+      .fp-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.07); }
+    }
+    @media (max-width: 820px) {
+      .vision-inner  { grid-template-columns: 1fr; }
+      .vision-col {
+        padding: 28px 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,191,255,0.15);
+      }
+      .vision-col:last-child { border-bottom: none; padding-bottom: 0; }
+      .vision-col:first-child { padding-top: 0; }
+      .partners-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .p-kpis.four { grid-template-columns: repeat(2, 1fr); }
+      .p-kpi:nth-child(2) { border-right: none; }
+      .p-kpi:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.07); padding-left: 0; text-align: left; }
+    }
+    @media (max-width: 400px) {
+      .fund-params { grid-template-columns: 1fr; }
+      .fp-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .fp-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-nav transparent">
+    <div class="container">
+      <div class="bar">
+        <a class="brand" href="index.html"><img src="img/logo-negro.png" alt="RIF logo"></a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span class="line"></span><span class="line"></span><span class="line"></span>
+        </button>
+        <nav class="links">
+          <a href="index.html">Home</a>
+          <a href="infratech-triangle.html">The Infratech Triangle</a>
+          <a href="strat.html">Strategy</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="team.html">Team</a>
+          <a class="cta" href="contact.html">Reach Out</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="strat-hero">
+    <img class="hero-img" src="img/fondos/barcelona.png" alt="Strategy">
+    <div class="hero-text">
+      <p class="eyebrow">Strategy</p>
+      <h1>Where capital meets climate infrastructure.</h1>
+      <p>A regulated FCRE combining institutional fund management with deep sector expertise in climate tech and infrastructure across Europe.</p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="strat-wrap">
+
+    <!-- ABOUT -->
+    <div class="strat-section">
+      <div class="s-label"><span>About Us</span></div>
+
+      <p class="about-strap fade-up">
+        RIF is a <strong>regulated FCRE</strong> combining institutional fund management and deep sector
+        expertise in <strong>climate and infrastructure</strong>, powered by <strong>GVC Gaesco and GNE Ventures</strong>.
+      </p>
+
+      <div class="vision-band fade-up">
+        <div class="vision-inner">
+          <div class="vision-col">
+            <span class="vc-num">01 — Vision</span>
+            <h3>Our Vision</h3>
+            <p>We back <strong>hard-tech founders</strong> building the next generation of <strong>climate infrastructure</strong> — assets with enduring utility, defensible economics, and measurable impact.</p>
+          </div>
+          <div class="vision-col">
+            <span class="vc-num">02 — Principles</span>
+            <h3>Our Principles</h3>
+            <p>We invest in transformative technologies that generate attractive returns while creating environmental value. Through strategic partnerships and long-term vision, we build enduring assets shaping <strong>tomorrow's infrastructure</strong>.</p>
+          </div>
+          <div class="vision-col">
+            <span class="vc-num">03 — Approach</span>
+            <h3>Our Investment Approach</h3>
+            <p>We act as lead or co-lead investors at Seed–Series A, deploying €1–5M initial tickets across the European Union and beyond, with full conviction in every company we back.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INVESTMENT FOCUS -->
+    <div class="strat-section">
+      <div class="s-label"><span>Investment Focus</span></div>
+
+      <div class="focus-grid">
+        <div class="focus-item fade-up">
+          <span class="fi-num">01</span>
+          <span class="fi-icon">🏭</span>
+          <span class="fi-label">Industrial Decarbonization</span>
+        </div>
+        <div class="focus-item fade-up">
+          <span class="fi-num">02</span>
+          <span class="fi-icon">🏙️</span>
+          <span class="fi-label">Urban Regeneration</span>
+        </div>
+        <div class="focus-item fade-up">
+          <span class="fi-num">03</span>
+          <span class="fi-icon">📡</span>
+          <span class="fi-label">Digitalization</span>
+        </div>
+        <div class="focus-item fade-up">
+          <span class="fi-num">04</span>
+          <span class="fi-icon">⚡</span>
+          <span class="fi-label">Energy</span>
+        </div>
+      </div>
+
+      <div class="fund-params fade-up">
+        <div class="fp-item">
+          <span class="fp-label">Stage</span>
+          <span class="fp-value">Seed – Series A</span>
+        </div>
+        <div class="fp-item">
+          <span class="fp-label">Ticket</span>
+          <span class="fp-value">€1 – 5M initial</span>
+        </div>
+        <div class="fp-item">
+          <span class="fp-label">Geography</span>
+          <span class="fp-value">EU+</span>
+        </div>
+        <div class="fp-item">
+          <span class="fp-label">Role</span>
+          <span class="fp-value">Lead / Co-lead</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STRATEGIC PARTNERS -->
+    <div class="strat-section">
+      <div class="s-label"><span>Strategic Partners</span></div>
+
+      <div class="partners-grid">
+
+        <div class="partner-card fade-up">
+          <img class="p-logo" src="img/logos/ventures-v3.jpeg" alt="GNE Ventures">
+          <div>
+            <p class="p-role">Sourcing · Sector Expertise · Portfolio Support</p>
+            <p class="p-desc">GNE Ventures is an Energy Transition advisory and Infratech investment firm specialising in the design, setup, fundraising, and management of investment vehicles.</p>
+          </div>
+          <div class="p-kpis three">
+            <div class="p-kpi">
+              <span class="k-val">17 yrs</span>
+              <span class="k-label">Operating in Clean Tech</span>
+            </div>
+            <div class="p-kpi">
+              <span class="k-val">€120M+</span>
+              <span class="k-label">Structured & Funded</span>
+            </div>
+            <div class="p-kpi">
+              <span class="k-val">15</span>
+              <span class="k-label">Investments</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="partner-card fade-up">
+          <img class="p-logo" src="img/gaesco1.png" alt="GVC Gaesco">
+          <div>
+            <p class="p-role">Fund Management · Execution · Investor Access</p>
+            <p class="p-desc">As a strategic fund partner for RIF, GVC Gaesco Alternative Investments strengthens our fund with 20+ years of expertise in VC/PE fund structuring, alternative asset management, and investor access. As a regulated AIFM, it provides a robust framework for investment execution.</p>
+          </div>
+          <div class="p-kpis four">
+            <div class="p-kpi">
+              <span class="k-val">€6,000M</span>
+              <span class="k-label">AUM</span>
+            </div>
+            <div class="p-kpi">
+              <span class="k-val">8</span>
+              <span class="k-label">VC Funds</span>
+            </div>
+            <div class="p-kpi">
+              <span class="k-val">50+</span>
+              <span class="k-label">Years of History</span>
+            </div>
+            <div class="p-kpi">
+              <span class="k-val">300+</span>
+              <span class="k-label">Professionals</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div style="font-size:0.85rem; font-style:italic; text-align:center; color:#cfd6df; margin:0 auto 24px; max-width:1000px; line-height:1.6; padding:0 var(--space);">
+    This is not an offer to sell or solicitation to buy securities. For professional investors only.
+    Investments in FCREs are illiquid and involve risk, including loss of capital. Please refer to the fund documents.
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-wrapper">
+      <div class="footer-brand">
+        <p class="footer-company">Resilient InfraTech Ventures FCRE, S.A</p>
+      </div>
+      <div class="footer-legal">
+        <p><strong>Legal</strong></p>
+        <ul>
+          <li><a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a></li>
+          <li><a href="terms.html" target="_blank" rel="noopener">Terms of Service</a></li>
+          <li><a href="cookie.html" target="_blank" rel="noopener">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Resilient InfraTech Ventures FCRE, S.A. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks  = document.querySelector('.site-nav .links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        navToggle.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Header scroll state
+    const header = document.querySelector('.site-nav');
+    const syncHeader = () => header.classList.toggle('scrolled', window.scrollY > 10);
+    window.addEventListener('scroll', syncHeader, { passive: true });
+    syncHeader();
+
+    // Fade-up on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
