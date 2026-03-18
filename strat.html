@@ -24,7 +24,7 @@
     ══════════════════════════════════════════════ */
     .strat-hero {
       position: relative;
-      height: clamp(520px, 72vh, 820px);
+      height: 100vh;
       overflow: hidden;
       display: flex;
       align-items: flex-end;
@@ -517,33 +517,10 @@
     <div class="strat-section">
       <div class="s-label"><span>Investment Focus</span></div>
 
-      <div class="focus-grid">
-        <div class="focus-item fade-up">
-          <span class="fi-num">01</span>
-          <span class="fi-icon">🏭</span>
-          <span class="fi-label">Industrial Decarbonization</span>
-        </div>
-        <div class="focus-item fade-up">
-          <span class="fi-num">02</span>
-          <span class="fi-icon">🏙️</span>
-          <span class="fi-label">Urban Regeneration</span>
-        </div>
-        <div class="focus-item fade-up">
-          <span class="fi-num">03</span>
-          <span class="fi-icon">📡</span>
-          <span class="fi-label">Digitalization</span>
-        </div>
-        <div class="focus-item fade-up">
-          <span class="fi-num">04</span>
-          <span class="fi-icon">⚡</span>
-          <span class="fi-label">Energy</span>
-        </div>
-      </div>
-
       <div class="fund-params fade-up">
         <div class="fp-item">
           <span class="fp-label">Stage</span>
-          <span class="fp-value">Seed – Series A</span>
+          <span class="fp-value">Late Seed / Series A</span>
         </div>
         <div class="fp-item">
           <span class="fp-label">Ticket</span>
@@ -560,16 +537,23 @@
       </div>
     </div>
 
-    <!-- STRATEGIC PARTNERS -->
+    <!-- TRACK RECORD -->
     <div class="strat-section">
-      <div class="s-label"><span>Strategic Partners</span></div>
+      <div class="s-label"><span>Track Record</span></div>
+
+      <p class="about-strap fade-up">
+        The team behind RIF has spent a combined <strong>120 years</strong> not just investing in infrastructure,
+        but <strong>building it, financing it, and scaling it</strong>. Davide built and ran GNE Finance and GNE Ventures.
+        Giovanni structured securitisations at Société Générale and ABN AMRO.
+        Paco ran GVC Gaesco's entire alternatives platform.
+      </p>
 
       <div class="partners-grid">
 
         <div class="partner-card fade-up">
           <img class="p-logo" src="img/logos/ventures-v3.jpeg" alt="GNE Ventures">
           <div>
-            <p class="p-role">Sourcing · Sector Expertise · Portfolio Support</p>
+            <p class="p-role">Sector Origin · Investment Expertise · Portfolio Support</p>
             <p class="p-desc">GNE Ventures is an Energy Transition advisory and Infratech investment firm specialising in the design, setup, fundraising, and management of investment vehicles.</p>
           </div>
           <div class="p-kpis three">
@@ -591,7 +575,7 @@
         <div class="partner-card fade-up">
           <img class="p-logo" src="img/gaesco1.png" alt="GVC Gaesco">
           <div>
-            <p class="p-role">Fund Management · Execution · Investor Access</p>
+            <p class="p-role">Fund Structure · Regulatory Framework · Investor Access</p>
             <p class="p-desc">As a strategic fund partner for RIF, GVC Gaesco Alternative Investments strengthens our fund with 20+ years of expertise in VC/PE fund structuring, alternative asset management, and investor access. As a regulated AIFM, it provides a robust framework for investment execution.</p>
           </div>
           <div class="p-kpis four">
@@ -666,7 +650,11 @@
 
     // Header scroll state
     const header = document.querySelector('.site-nav');
-    const syncHeader = () => header.classList.toggle('scrolled', window.scrollY > 10);
+    const syncHeader = () => {
+      const isScrolled = window.scrollY > 10;
+      header.classList.toggle('scrolled', isScrolled);
+      header.classList.toggle('transparent', !isScrolled);
+    };
     window.addEventListener('scroll', syncHeader, { passive: true });
     syncHeader();
 
